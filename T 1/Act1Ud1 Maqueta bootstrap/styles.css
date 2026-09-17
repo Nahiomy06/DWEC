@@ -5,30 +5,34 @@
     --bs-border-width: 1px;
     --bs-border-radius: 0.25rem;
     --bs-border-style: solid;
+
 }
 
 
 /* nav */
 .navbar-collapse {
     justify-content: right;
+    
 }
+
 
 .btn-outline-success {
     --bs-btn-color: #000000;
     --bs-btn-border-color: #000000;
-    --bs-btn-hover-color: #f8e1e1;
-    --bs-btn-hover-bg: #ffffff;
-    --bs-btn-hover-border-color: #ffffff;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #081d93;
+    --bs-btn-hover-border-color: #000000;
     --bs-btn-focus-shadow-rgb: 25, 135, 84;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: rgb(233, 180, 224);
+    --bs-btn-active-bg: rgb(79, 54, 131);
     --bs-btn-active-border-color: #ffffff;
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #e2cbcb;
+    --bs-btn-disabled-color: #0228ff;
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: #ffffff;
     --bs-gradient: none;
 }
+
 .btn {
     --bs-btn-padding-x: 0.5rem;
     --bs-btn-padding-y: 0.6rem;
@@ -39,16 +43,16 @@
     margin: 1rem auto;
 }
 
-.row > .col {
-  flex: 0 0 100%;
-  width: 100%;
+.row>.col {
+    flex: 0 0 100%;
+    width: 100%;
 }
 
 @media (min-width: 768px) {
-  .row > .col {
-    flex: 1 0 0%;
-    width: auto;
-  }
+    .row>.col {
+        flex: 1 0 0%;
+        width: auto;
+    }
 }
 
 .img-thumbnail {
@@ -60,10 +64,59 @@
     height: auto;
 }
 
-/* segundo conteiner */
+.mainArt {
+    justify-content: left !important;
 
-.cards {
-    margin-top: 2rem;
+}
+
+p {
+    margin: 2rem 0;
+    text-align: left;
+    align-items: center;
+
+}
+
+.btnCompra {
+    background-color: #2a63ff;
+    color: #ffffff;
+    border: 1px solid #1a4acd;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+    background-color-hover: #1a4acd;
+
+
 }
 
 
+
+/* segundo conteiners */
+
+.card {
+    --bs-card-border-width: 0.1rem;
+    --bs-card-border-color: rgb(197, 197, 197);
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 2%;
+}
+
+.text-center {
+    text-align: left !important;
+}
+
+.Accesorios{
+    
+    font-weight: bolder;
+}
+
+
+
+/* tercer conteiners */
+
+.email {
+    margin-top: 4%;
+    padding: 3rem;
+    background-color: #eff6ff;
+
+}
