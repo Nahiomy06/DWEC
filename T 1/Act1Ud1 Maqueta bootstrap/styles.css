@@ -5,16 +5,12 @@
     --bs-border-width: 1px;
     --bs-border-radius: 0.25rem;
     --bs-border-style: solid;
-
 }
-
 
 /* nav */
 .navbar-collapse {
-    justify-content: right;
-    
+    justify-content: flex-end;
 }
-
 
 .btn-outline-success {
     --bs-btn-color: #000000;
@@ -43,20 +39,8 @@
     margin: 1rem auto;
 }
 
-.row>.col {
-    flex: 0 0 100%;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .row>.col {
-        flex: 1 0 0%;
-        width: auto;
-    }
-}
-
 .img-thumbnail {
-    padding: .25rem;
+    padding: 0.25rem;
     background-color: var(--bs-body-bg);
     border: var(--bs-border-width) solid var(--bs-border-color);
     border-radius: var(--bs-border-radius);
@@ -66,14 +50,12 @@
 
 .mainArt {
     justify-content: left !important;
-
 }
 
 p {
-    margin: 2rem 0;
+    margin: 1rem 0;
     text-align: left;
     align-items: center;
-
 }
 
 .btnCompra {
@@ -83,21 +65,21 @@ p {
     padding: 0.5rem 1rem;
     text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s, color 0.3s;
-    background-color-hover: #1a4acd;
-
-
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
-
-
 /* segundo conteiners */
+
+.cards .card {
+    width: 100% !important;
+}
 
 .card {
     --bs-card-border-width: 0.1rem;
     --bs-card-border-color: rgb(197, 197, 197);
-    margin-top: 2rem;
-    padding: 1.5rem;
+    padding: 0.8rem;
     border-radius: 2%;
 }
 
@@ -105,12 +87,9 @@ p {
     text-align: left !important;
 }
 
-.Accesorios{
-    
+.Accesorios {
     font-weight: bolder;
 }
-
-
 
 /* tercer conteiners */
 
@@ -118,5 +97,29 @@ p {
     margin-top: 4%;
     padding: 3rem;
     background-color: #eff6ff;
+}
 
+/* footer */
+
+/* Resposive */
+
+@media (min-width: 768px) {
+    .row > .col {
+        flex: 1 0 0%;
+        width: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .email {
+        padding: 2rem 1.5rem;
+    }
+
+    .email .row {
+        margin: 0;
+    }
+
+    .email .col-12 {
+        padding: 0;
+    }
 }

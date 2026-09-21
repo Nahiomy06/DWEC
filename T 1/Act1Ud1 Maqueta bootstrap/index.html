@@ -1,186 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_convenience_store" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=refresh" />
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+            crossorigin="anonymous"
+        >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_convenience_store"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=refresh"
+        />
+    </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">agoodshop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tienda</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Accesorios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " aria-disabled="true">Soporte</a>
-                    </li>
-                    <li class="nav-item">
-                        <button class="btn btn-outline-success me-2" type="button">Contactar</button>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">agoodshop</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accesorios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " aria-disabled="true">Soporte</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-success me-2 fw-bold" type="button">Contactar</button>
 
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    <div class="container text-left ">
-        <div class="row">
-            <div class="col-auto">
-                <img src="https://placehold.co/500x500" class="img-thumbnail" alt="placeholder image">
-            </div>
-            <div class="col">
-                <article class="mainArt">
-                    <h6>Oferta</h6>
-                    <h2>Compra un iFhone 13 Pro</h2>
-                    <p>iFhone 13: Tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace
-                        morder
-                        el polvo a la competencia. Un subidón de autonomía que vaya si notarás. Ceramic Shield, más duro
-                        que
-                        cualquier vidrio de smartphone.
-
-                        Pantalla Super Retina XDR de 6,1 pulgadas. Diseño robusto con bordes planos y resistente al
-                        agua.
-
-                    </p>
-
-                    <h3> 9938,99€ <button class="btn btn-outline-success me-2 btnCompra" type="button">Comprar</button>
-                    </h3>
-
-
-                    <div class="row">
-                        <div class="col">
-                            <p>
-                                <span class="material-symbols-outlined simbol">
-                                    local_convenience_store
-                                </span>
-
-                                Envio rapido,gratuito y sin contacto
-                            </p>
+        <div class="container text-left ">
+            <div class="row g-4 align-items-start">
+                <div class=" col-12 col-md-5">
+                    <div class=" col-auto position-relative d-inline-block w-100">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 fs-6">128g</span>
+                        <img src="https://placehold.co/500x500" class="img-thumbnail" alt="placeholder image">
+                    </div>
+                </div>
+                <div class="col col-12 col-md-7 col-lg-7 ps-md-4">
+                    <article class="mainArt ">
+                        <h6 class="text-danger fw-bold text-uppercase medium">Oferta</h6>
+                        <h2 class="fw-bold display-6 mt-1 mb-3">Compra un iFhone 13 Pro</h2>
+                        <p>iFhone 13: Tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace
+                            morder el polvo a la competencia. Un subidón de autonomía que vaya si notarás. Ceramic Shield,
+                            más duro
+                            que cualquier vidrio de smartphone.
+                        </p>
+                        <p>
+                            Pantalla Super Retina XDR de 6,1 pulgadas. Diseño robusto con bordes planos y resistente al
+                            agua.
+                        </p>
+                        <div>
+                            <h3 class="display-6 fw-bold"> 9938,99€ <button
+                                    class="btn btn-outline-success me-2 btnCompra"
+                                    type="button"
+                                >Comprar</button></h3>
                         </div>
-                        <div class="col">
-                            <p>
-                                <span class="material-symbols-outlined simbol">
-                                    local_convenience_store
-                                </span>
 
-                                Devoluciones faciles y gratuitas
-                            </p>
+                        <div class="row row-cols-2 row-cols-md-3 g-3 pt-2">
+                            <div class="col">
+                                <p class="d-flex align-items-center gap-2">
+                                    <span class="material-symbols-outlined simbol">
+                                        local_convenience_store
+                                    </span>
+
+                                    Envio rapido,gratuito y sin contacto
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="d-flex align-items-center gap-2">
+                                    <span class="material-symbols-outlined simbol">
+                                        local_convenience_store
+                                    </span>
+
+                                    Devoluciones faciles y gratuitas
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="d-flex align-items-center gap-2">
+
+                                    <span class="material-symbols-outlined simbol">
+                                        local_convenience_store
+                                    </span>
+                                    Posibilidad de pago a plazos
+                                </p>
+                            </div>
                         </div>
-                        <div class="col">
-                            <p>
+                    </article>
+                </div>
+            </div>
+        </div>
 
-                                <span class="material-symbols-outlined simbol">
-                                    local_convenience_store
-                                </span>
-                                Posibilidad de pago a plazos
-                            </p>
+        <div class="container text-center cards">
+            <h1 class="Accesorios text-start mb-4">Accesorios recomendados</h1>
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cargador</h5>
+                            <p class="card-text mt-2">El adaptador de corriente USB-C de 20 W es muy rápido y eficiente, así
+                                que
+                                va de perlas para cargar tus dispositivos en cualquier lugar.</p>
                         </div>
                     </div>
-                </article>
-            </div>
-        </div>
-    </div>
-
-    <div class="container text-center cards">
-        <h1 class="Accesorios">Accesorios recomendados</h1>
-        <div class="row">
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Base de carga inalámbrica</h5>
+                            <div><span class="badge bg-danger mb-2">Oferta</span></div>
+                            <p class="card-text mt-2">Sistema de soporte para que sigas usando tu smartphone cómodamente
+                                mientras lo cargas. Compatible con carga rápida de 20W.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Funda piel</h5>
+                            <p class="card-text mt-2">Fabricadas en piel europea curtida y teñida con un proceso especial,
+                                son
+                                suaves al tacto y adquieren un tono natural con el tiempo. Los botones de aluminio combinan
+                                a la perfección con el acabado de la piel.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card" style="width: 18rem;">
-                    <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card’s content.</p>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/100x100" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cargador</h5>
+                            <div><span class="badge bg-primary mb-2">Nuevo</span></div>
+                            <p class="card-text mt-2">El adaptador de corriente USB-C de 20 W es muy rápido y eficiente, así
+                                que va de perlas para cargar tus dispositivos en cualquier lugar.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container text-center email">
+        <div class="container text-center email my-5">
 
-        <div class="row">
-            <div class="col">
-                <h2>Participa en el sorteo de un iFhone 13</h2>
-                <p>Este verano, ¡venimos cargados de premios! Así que antes de irte de vacaciones, ¡participa en nuestro
-                    sorteo! y podrás llevarte un regalo increíble como un nuevo iFhone 13
-                    Rellena este formulario para ser uno de los afortunados.</p>
-            </div>
-            <div class="col">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ari Gold">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-7 text-center text-md-start">
+                    <h2 class="fw-bold mb-3">Participa en el sorteo de un iFhone 13</h2>
+                    <p class="mb-0">Este verano, ¡venimos cargados de premios! Así que antes de irte de vacaciones, ¡participa en nuestro
+                        sorteo! y podrás llevarte un regalo increíble como un nuevo iFhone 13
+                        Rellena este formulario para ser uno de los afortunados.</p>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                        placeholder="Arigold@mga.com">
-                </div>
+                <div class="col-12 col-md-5">
+                    <div class="text-start mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ari Gold">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="exampleFormControlInput1"
+                            placeholder="Arigold@mga.com"
+                        >
+                        <div class="d-flex justify-content-start">
+                            <button class="btn btn-outline-success me-2 btnCompra w-md-auto px-4  mt-4"type="button">Participar</button>
+                        </div>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-md">
-            <a class="navbar-brand" href="#">©agoodshop</a>
-        </div>
-    </nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary footer">
+            <div class="container-md d-flex justify-content-center">
+                <a class="navbar-brand me-0" href="#">©agoodshop</a>
+            </div>
+        </nav>
 
 
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 
