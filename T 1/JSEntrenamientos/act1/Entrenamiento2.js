@@ -5,18 +5,15 @@ botón mediante el uso del DOM en Javascript
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-    let parrafo = document.createElement("p");
+    const parrafo = document.createElement("p");
 
-    parrafo.textContent = "Parrafo creado con jscript";
+    parrafo.classList.add("parrafo")
+    parrafo.textContent = "Ejercicio 3: Crear con jscript";
 
-    parrafo.style.color = "purple";
-
-    let boton = document.createElement("button");
-
-    boton.textContent ="Click me"
-
-    boton.style.backgroundColor = "pink";
-    boton.style.color = "white";
+    const boton = document.createElement("button");
+    
+    boton.classList.add("btn-principal")
+    boton.textContent = "Click me"
 
     boton.addEventListener("click", function(){
         alert("Boton precionado!")
