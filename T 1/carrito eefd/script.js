@@ -18,7 +18,6 @@ fetch("http://localhost:8080/api/carrito")
         console.log(carrito);
     });
 */
-
 fetch("http://localhost:8080/api/carrito")
     .then(function (response) {
         return response.json();
