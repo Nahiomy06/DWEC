@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: white;
+    color: #292929;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    height: 74px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 700;
+    color: #292929;
+}
+
+/* PRODUCTOS */
+
+.productos-header {
+    display: grid;
+    grid-template-columns: 1fr 185px 145px 135px;
+
+    padding-bottom: 14px;
+
+    border-bottom: 1px solid #d5d5d5;
+
+    font-size: 14px;
+}
+
+/* PRODUCTO */
+
+.producto {
+    display: grid;
+
+    grid-template-columns: 1fr 185px 145px 135px;
+
+    align-items: center;
+
+    min-height: 116px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* INFORMACIÓN DEL PRODUCTO */
+
+.producto-info h3 {
+    margin: 0 0 8px 0;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.producto-info p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+/* CANTIDAD */
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.cantidad button {
+    border: none;
+    background: transparent;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.cantidad input {
+    width: 52px;
+    height: 48px;
+
+    text-align: center;
+
+    border: 1px solid #d4d4d4;
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+/* PRECIO */
+
+.precio {
+    font-size: 15px;
+}
+
+/* TOTAL DEL PRODUCTO */
+
+.total-producto {
+    font-size: 15px;
+}
+
+/* RESUMEN */
+
+.resumen {
+    background: #fafafa;
+
+    padding: 25px;
+
+    min-height: 218px;
+}
+
+.resumen h2 {
+    margin: 0 0 25px 0;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* PRODUCTOS DEL RESUMEN */
+
+.resumen-producto {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 14px;
+}
+
+/* LINEA */
+
+.resumen hr {
+    border: 0;
+
+    border-top: 1px solid #d5d5d5;
+
+    margin: 20px 0 25px;
+}
+
+/* TOTAL */
+
+.total-final {
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 16px;
+}
+
+.total-final strong {
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .productos-header {
+        display: none;
+    }
+
+    .producto {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        padding: 25px 0;
+    }
+
+    .cantidad {
+        margin: 5px 0;
+    }
+
+    .resumen {
+        margin-top: 20px;
+    }
+}
