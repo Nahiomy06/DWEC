@@ -7,7 +7,9 @@ fetch("http://localhost:8080/api/carrito")
         return response.json();
     })
     .then(function (data) {
+        carrito = new Carrito(data.products);
         MostrarProductos(data.products);
+        actualizarTotal();
     })
     .catch(function (error) {
         console.log("Error al cargar los productos");
@@ -28,7 +30,7 @@ function MostrarProductos(productos) {
         titulo.textContent = producto.title;
 
         const referencia = document.createElement("p");
-        referencia.textContent = "Ref: " + producto.SKU;
+        referencia.textContent = "Ref: " + producto.sku;
 
         informacion.appendChild(titulo);
         informacion.appendChild(referencia);
@@ -39,13 +41,26 @@ function MostrarProductos(productos) {
         const btnMenos = document.createElement("button");
         btnMenos.textContent = "-";
 
+        btnMenos.addEventListener("click", function () {
+            if (Number(input.value) > 0) {
+                input.value = Number(input.value) - 1;
+                actualizarPrecioProducto();
+            }
+        });
+
         const input = document.createElement("input");
         input.type = "number";
         input.min = "0";
-        input.dataset.sku = producto.SKU;
+        input.value = "0";
+        input.dataset.sku = producto.sku;
 
         const btnMas = document.createElement("button");
         btnMas.textContent = "+";
+
+        btnMas.addEventListener("click", function () {
+            input.value = Number(input.value) + 1;
+            actualizarPrecioProducto();
+        });
 
         cantidad.appendChild(btnMenos);
         cantidad.appendChild(input);
@@ -59,6 +74,17 @@ function MostrarProductos(productos) {
         precioTotal.classList.add("seccionTotal");
         precioTotal.textContent = "0€";
 
+        function actualizarPrecioProducto() {
+            const unidades = Number(input.value);
+            const sku = producto.sku;
+
+            carrito.actualizarUnidades(sku, unidades);
+
+            const subtotal = Number(producto.price) * unidades;
+            precioTotal.textContent = subtotal.toFixed(2) + "€";
+            actualizarTotal();
+        }
+
         linea.appendChild(informacion);
         linea.appendChild(cantidad);
         linea.appendChild(precio);
@@ -66,4 +92,44 @@ function MostrarProductos(productos) {
 
         contenedor.appendChild(linea);
     });
+}
+function actualizarTotal() {
+    const info = carrito.obtenerCarrito();
+    document.getElementById("total").textContent = info.total + info.currency;
+
+    const contenedor = document.getElementById("productosCarrito");
+    contenedor.replaceChildren();
+
+    info.products.forEach((producto) => {
+        const linea = document.createElement("div");
+        linea.classList.add("d-flex", "justify-content-between", "mb-2");
+
+        const nombre = document.createElement("span");
+        nombre.textContent = producto.title;
+
+        const precio = document.createElement("span");
+        precio.textContent = producto.subtotal.toFixed(2) + "€";
+
+        linea.appendChild(nombre);
+        linea.appendChild(precio);
+
+        contenedor.appendChild(linea);
+    });
+
+    const lineaSeparadora = document.createElement("hr");
+    contenedor.appendChild(lineaSeparadora);
+
+    const lineaTotal = document.createElement("div");
+    lineaTotal.classList.add("d-flex", "justify-content-between", "fw-bold");
+
+    const textoTotal = document.createElement("span");
+    textoTotal.textContent = "Total";
+
+    const precioTotal = document.createElement("span");
+    precioTotal.textContent = info.total + info.currency;
+
+    lineaTotal.appendChild(textoTotal);
+    lineaTotal.appendChild(precioTotal);
+
+    contenedor.appendChild(lineaTotal);
 }
