@@ -15,9 +15,7 @@ export default class Carrito {
     }
 
     obtenerInfoProducto(sku) {
-        const producto = this.productos.find(
-            (producto) => producto.sku === sku,
-        );
+        const producto = this.productos.find((p) => (p.sku || p.SKU) === sku);
         if (!producto) {
             return null;
         }

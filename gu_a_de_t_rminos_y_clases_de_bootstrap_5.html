@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosario y Guía de Términos de Bootstrap 5</title>
+    <!-- CDN de Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #7952b3, #495057);
+            color: white;
+        }
+        .code-badge {
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            background-color: #f1f3f5;
+            color: #d63384;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+        .category-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero -->
+    <header class="hero-section py-5 mb-4 shadow">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold"><i class="bi bi-bootstrap-fill me-2"></i>Glosario de Bootstrap 5</h1>
+            <p class="lead">Diccionario de términos, clases utilitarias, abreviaturas y prefijos comunes.</p>
+            
+            <!-- Buscador -->
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                        <input type="text" id="searchInput" class="form-control border-start-0" placeholder="Buscar término o clase (ej: g-3, mb, flex, col)..." onkeyup="filterTerms()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container pb-5">
+        
+        <!-- Navegación por Categorías -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="categoryButtons">
+            <button class="btn btn-outline-purple active btn-sm filter-btn" onclick="filterCategory('all')">Todos</button>
+            <button class="btn btn-outline-secondary btn-sm filter-btn" onclick="filterCategory('spacing')">Espaciado (Margin/Padding)</button>
+            <button class="btn btn-outline-secondary btn-sm filter-btn" onclick="filterCategory('grid')">Grid y Gutters (g-*)</button>
+            <button class="btn btn-outline-secondary btn-sm filter-btn" onclick="filterCategory('breakpoints')">Puntos de Ruptura (Responsive)</button>
+            <button class="btn btn-outline-secondary btn-sm filter-btn" onclick="filterCategory('flex')">Flexbox y Layout</button>
+            <button class="btn btn-outline-secondary btn-sm filter-btn" onclick="filterCategory('colors')">Colores y Estilos</button>
+        </div>
+
+        <div class="row g-4" id="termsContainer">
+
+            <!-- ESPACIADO (MARGIN Y PADDING) -->
+            <div class="col-md-6 col-lg-4 term-card" data-category="spacing">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-primary">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">m-*, p-*</span>
+                            <span class="badge bg-primary">Espaciado</span>
+                        </div>
+                        <h5 class="card-title">Margin y Padding General</h5>
+                        <p class="card-text">
+                            <strong>m</strong> = <code>margin</code> (margen exterior).<br>
+                            <strong>p</strong> = <code>padding</code> (relleno interior).<br>
+                            Los valores van de <code>0</code> a <code>5</code> (ej. <code>m-3</code>, <code>p-2</code>) o <code>auto</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 term-card" data-category="spacing">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-primary">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">mt, mb, ms, me, mx, my</span>
+                            <span class="badge bg-primary">Espaciado</span>
+                        </div>
+                        <h5 class="card-title">Abreviaturas de Dirección</h5>
+                        <p class="card-text">
+                            <code>t</code> (top/arriba), <code>b</code> (bottom/abajo).<br>
+                            <code>s</code> (start/izquierda en LTR), <code>e</code> (end/derecha en LTR).<br>
+                            <code>x</code> (horizontal: left+right), <code>y</code> (vertical: top+bottom).<br>
+                            <em>Ejemplo: <code>mb-3</code> = margin-bottom nivel 3.</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GUTTERS / GRID -->
+            <div class="col-md-6 col-lg-4 term-card" data-category="grid">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-success">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">g-*, gx-*, gy-*</span>
+                            <span class="badge bg-success">Grid / Gutters</span>
+                        </div>
+                        <h5 class="card-title">Gutters (Espacio entre Columnas)</h5>
+                        <p class="card-text">
+                            Define la separación (gap) entre columnas y filas dentro de un <code>.row</code>.<br>
+                            <code>g-3</code>: Espaciado general en X e Y.<br>
+                            <code>gx-3</code>: Espaciado horizontal.<br>
+                            <code>gy-3</code>: Espaciado vertical.<br>
+                            Rango: <code>0</code> a <code>5</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 term-card" data-category="grid">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-success">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">container / row / col</span>
+                            <span class="badge bg-success">Grid</span>
+                        </div>
+                        <h5 class="card-title">Estructura del Grid</h5>
+                        <p class="card-text">
+                            <code>container</code>: Contenedor principal que centra el contenido.<br>
+                            <code>row</code>: Fila que agrupa columnas (usa flexbox).<br>
+                            <code>col</code>: Columna que se adapta automáticamente o según el tamaño especificado (de 1 a 12).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BREAKPOINTS -->
+            <div class="col-md-6 col-lg-4 term-card" data-category="breakpoints">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-warning">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">sm, md, lg, xl, xxl</span>
+                            <span class="badge bg-warning text-dark">Responsive</span>
+                        </div>
+                        <h5 class="card-title">Breakpoints (Puntos de Ruptura)</h5>
+                        <p class="card-text">
+                            Definen a partir de qué ancho de pantalla se aplican los estilos:<br>
+                            <code>sm</code>: ≥576px (Móviles grandes)<br>
+                            <code>md</code>: ≥768px (Tablets)<br>
+                            <code>lg</code>: ≥992px (Laptops)<br>
+                            <code>xl</code>: ≥1200px (Desktops)<br>
+                            <code>xxl</code>: ≥1400px (Pantallas grandes)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLEXBOX -->
+            <div class="col-md-6 col-lg-4 term-card" data-category="flex">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">d-flex, d-block, d-none</span>
+                            <span class="badge bg-info text-dark">Display</span>
+                        </div>
+                        <h5 class="card-title">Propiedad Display</h5>
+                        <p class="card-text">
+                            Controla cómo se muestra un elemento.<br>
+                            <code>d-none</code>: Oculta el elemento.<br>
+                            <code>d-flex</code>: Convierte el contenedor en Flexbox.<br>
+                            <code>d-block</code>: Muestra como elemento de bloque.<br>
+                            Permite combinación responsive (ej. <code>d-none d-md-block</code>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 term-card" data-category="flex">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-info">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">justify-content-* / align-items-*</span>
+                            <span class="badge bg-info text-dark">Flexbox</span>
+                        </div>
+                        <h5 class="card-title">Alineación Flexbox</h5>
+                        <p class="card-text">
+                            <code>justify-content-*</code>: Alineación horizontal (center, start, end, between, around).<br>
+                            <code>align-items-*</code>: Alineación vertical (center, start, end, stretch).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLORES -->
+            <div class="col-md-6 col-lg-4 term-card" data-category="colors">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-danger">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">primary, secondary, success...</span>
+                            <span class="badge bg-danger">Colores Temáticos</span>
+                        </div>
+                        <h5 class="card-title">Nombres de Colores Semánticos</h5>
+                        <p class="card-text">
+                            <code>primary</code> (Azul), <code>secondary</code> (Gris), <code>success</code> (Verde), <code>danger</code> (Rojo), <code>warning</code> (Amarillo), <code>info</code> (Cian), <code>light</code> (Claro), <code>dark</code> (Oscuro).<br>
+                            Se usan con prefijos: <code>text-*</code>, <code>bg-*</code>, <code>btn-*</code>, <code>border-*</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 term-card" data-category="colors">
+                <div class="card h-100 shadow-sm category-card border-start border-4 border-danger">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="code-badge fs-6 fw-bold">fs-*, fw-*</span>
+                            <span class="badge bg-danger">Tipografía</span>
+                        </div>
+                        <h5 class="card-title">Estilos de Texto</h5>
+                        <p class="card-text">
+                            <code>fs-*</code>: Font Size (de <code>fs-1</code> más grande a <code>fs-6</code> más pequeño).<br>
+                            <code>fw-*</code>: Font Weight (<code>fw-bold</code>, <code>fw-normal</code>, <code>fw-light</code>).<br>
+                            <code>text-center</code>, <code>text-start</code>, <code>text-end</code>: Alineación de texto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script de Filtro y Búsqueda -->
+    <script>
+        function filterTerms() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.getElementsByClassName('term-card');
+
+            Array.from(cards).forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(input)) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function filterCategory(category) {
+            const cards = document.getElementsByClassName('term-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Actualizar botones activos
+            buttons.forEach(btn => btn.classList.remove('active', 'btn-outline-purple'));
+
+            Array.from(cards).forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+    <!-- JS de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

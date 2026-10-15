@@ -53,6 +53,7 @@ function MostrarProductos(productos) {
         input.min = "0";
         input.value = "0";
         input.dataset.sku = producto.sku;
+        input.addEventListener("input", actualizarPrecioProducto);
 
         const btnMas = document.createElement("button");
         btnMas.textContent = "+";
@@ -95,7 +96,8 @@ function MostrarProductos(productos) {
 }
 function actualizarTotal() {
     const info = carrito.obtenerCarrito();
-    document.getElementById("total").textContent = info.total + info.currency;
+    document.getElementById("productosCarrito").textContent =
+        info.total + info.currency;
 
     const contenedor = document.getElementById("productosCarrito");
     contenedor.replaceChildren();
@@ -105,9 +107,11 @@ function actualizarTotal() {
         linea.classList.add("d-flex", "justify-content-between", "mb-2");
 
         const nombre = document.createElement("span");
+        nombre.classList.add("text-body");
         nombre.textContent = producto.title;
 
         const precio = document.createElement("span");
+        precio.classList.add("text-body");
         precio.textContent = producto.subtotal.toFixed(2) + "€";
 
         linea.appendChild(nombre);
@@ -117,15 +121,28 @@ function actualizarTotal() {
     });
 
     const lineaSeparadora = document.createElement("hr");
+
     contenedor.appendChild(lineaSeparadora);
 
     const lineaTotal = document.createElement("div");
     lineaTotal.classList.add("d-flex", "justify-content-between", "fw-bold");
+    lineaTotal.classList.add(
+        "d-flex",
+        "justify-content-between",
+        "align-items-center",
+    );
 
     const textoTotal = document.createElement("span");
+    textoTotal.classList.add(
+        "text-uppercase",
+        "small",
+        "fw-medium",
+        "text-secondary",
+    );
     textoTotal.textContent = "Total";
 
     const precioTotal = document.createElement("span");
+    precioTotal.classList.add("fw-bold", "fs-5");
     precioTotal.textContent = info.total + info.currency;
 
     lineaTotal.appendChild(textoTotal);
