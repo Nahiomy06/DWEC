@@ -1,0 +1,23 @@
+.btn-mio {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-color: black;
+    border-radius: 6px;
+    box-shadow: 1px;
+}
+
+.btn-mio:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(68, 68, 68);
+    border-color: black;
+    border-radius: 6px;
+    box-shadow: 1px;
+}
+
+.btn-mio:active {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-color: black;
+    border-radius: 6px;
+    box-shadow: 1px;
+}
