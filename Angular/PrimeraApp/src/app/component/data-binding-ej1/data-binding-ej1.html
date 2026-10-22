@@ -1,0 +1,17 @@
+<section>
+    <div class="conteriner-fluid mt-4">
+        <h4>Hola soy el ejemplo de databinding</h4>
+        <p [class]="color[0]">{{ horaActual() }}</p>
+        <p [class]="color[1]">{{ color[1] }}</p>
+        <div [innerHTML]="listaColores()"></div>
+        <button class="btn btn-danger" [disabled]="estado"> click me </button>
+        <a [href]="actulizarURL()"> Clik me </a>
+
+        <p [class.Amarillo]="stock">Camisa</p>
+
+        <button class="btn btn-success m-3" (click)="sumar()"> sumar </button>
+        <button class="btn btn-danger m-3" (click)="reset()"> resest </button>
+        <button class="btn btn-primary m-3" (click)="restar()"> restar </button>
+
+    </div>
+</section>

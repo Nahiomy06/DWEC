@@ -1,0 +1,11 @@
+<section>
+    <h3>Ejemplo de Two-Way Data Binding</h3>
+    <input class="mt-2 p-3" type="text" name="text" id="texto" [(ngModel)]="texto">
+    <input class="mt-2 p-3" type="text" name="nombre" id="nombre" [(ngModel)]="miPersona.nombre">
+    <input class="mt-2 p-3" type="text" name="apellido" id="apellido" [(ngModel)]="miPersona.apellido">
+    <input class="mt-2 p-3" type="text" name="dni" id="dni" [(ngModel)]="miPersona.dni">
+
+    <p class="my-2">{{ texto }}</p>
+    <p class="my-2"> {{ MostrarPerosna() }}</p>
+
+</section>

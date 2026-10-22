@@ -1,3 +1,8 @@
 .thirdSection {
-    border-left: 12px solid rgb(28, 224, 87);
+    border-left: 12px solid rgb(238, 54, 223);
+}
+
+img {
+    justify-self: center;
+    margin-right: 1%;
 }
