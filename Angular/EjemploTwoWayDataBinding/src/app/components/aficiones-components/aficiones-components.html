@@ -1,0 +1,19 @@
+<section class="container mt-4">
+    <div class="d-flex flex-column">
+        <div class="input-group mt-2">
+            <label class="me-4" for="aficion">Aficion: </label>
+            <input type="text" name="aficion" id="aficion" placeholder="Introduce una aficion" [(ngModel)]="newAficion.aficion">
+        </div>
+        <div class="input-group mt-2">
+            <label class="me-4" for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" placeholder="Introduce un nombre" [(ngModel)]="newAficion.nombre">
+        </div>
+        <br>
+        <button class="btn btn-secondary mt-4" (click)="guradarDatos()">Guardar</button>
+    </div>
+    <hr>
+    <div class="d-flex flex-column text-start" [innerHTML]="cargarDatos()">
+
+
+    </div>
+</section>
