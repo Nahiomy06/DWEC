@@ -1,0 +1,27 @@
+<nav>
+    <ul class="menu">
+        @switch (role) {
+        @case ('admin') {
+        <li><a href="">Crear nuevo</a></li>
+        <li><a href="">Ver listado</a></li>
+        <li><a href="">Crear Usuario</a></li>
+        <li><a href="">Borrar Usuario</a></li>
+        }
+                
+        @case ('editor') {
+        <li><a href="">Crear nuevo</a></li>
+        <li><a href="">Ver listado</a></li>
+        }
+                
+        @case ('supcriptor') {
+        <li><a href="">Ver listado</a></li>
+        }
+
+        @case ('otros') {
+        <p>Debes tener otro rol</p>
+        }
+        }
+        
+
+    </ul>
+</nav>

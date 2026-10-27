@@ -1,0 +1,13 @@
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu a {
+    display: inline-block;
+    background-color: rgb(150, 187, 255);
+    color: rgb(4, 11, 51);
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+}
