@@ -1,5 +1,5 @@
 export interface Ideporte {
-  id: number;
   nombre: string;
-  descripcion: string;
+  valor: number;
+  color: string;
 }

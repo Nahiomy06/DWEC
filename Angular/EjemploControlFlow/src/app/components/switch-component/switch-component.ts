@@ -12,6 +12,6 @@ export class SwitchComponent {
 
   constructor() {
     this.roles = ['admin', 'editor', 'supcriptor', 'otros'];
-    this.role = this.roles[2];
+    this.role = this.roles[0];
   }
 }

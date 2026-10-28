@@ -1,1 +1,15 @@
-<p>for-component works!</p>
+<section class="container">
+    <ul>
+        @for (estudiante of estudiantes; track estudiante.id; let i=$index; let par = $even; let impar = $odd) {
+        <li class="estudiantes" [class.par]="par" [class.impar]="impar">
+            <span>The {{ i }}th:</span>
+            <span> {{ estudiante.name }}</span>
+        </li>
+        } @empty {
+        <li class="estudiantes par">No hay estudiantes para mostrar</li>
+        }
+    </ul>
+    <button class="btn btn-secondary" (click)="insertarEstudiante()"> Insetar </button>
+    <button class="btn btn-danger" (click)="eliminarEstudiante()"> Eliminar </button>
+
+</section>
