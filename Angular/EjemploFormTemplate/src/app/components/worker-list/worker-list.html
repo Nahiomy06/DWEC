@@ -1,0 +1,16 @@
+<section class="container m-3">
+    <h2> Lista de trabajadores</h2>
+    <button class="btn btn-danger mb-3" (click)="btnEliminarTrabajdores()">Eliminar trabajador</button>
+    @for(worker of arraysWorkers; track $index){
+    <div class="card shadow mb-3 p-5">
+        <p class="mt-4"><strong>Nombre</strong> {{ worker.nombre }}</p>
+        <p class="mt-4"><strong>Email</strong> {{ worker.email }}</p>
+        <p class="mt-4"><strong>Edad</strong> {{ worker.edad }}</p>
+    </div>
+
+    } @empty {
+    <h5>No hay trabajadores</h5>
+    }
+    <hr>
+
+</section>
