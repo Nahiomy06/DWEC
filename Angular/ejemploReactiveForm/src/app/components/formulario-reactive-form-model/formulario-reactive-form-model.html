@@ -9,6 +9,21 @@
             placeholder="Introduce tu nombre"
             formControlName="nombre"
         >
+        @if(checkControl('nombre', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('nombre', 'minlength')){
+        <p class="error">El nombre debe de tener al menos 3 caracteres</p>
+        }
+
+        <!--
+        @if (modelForm.get('nombre')?.hasError('required') && modelForm.get('nombre')?.touched  ) {
+        <p class="error">Campo requerido</p>
+        }
+        @if (modelForm.get('nombre')?.hasError('minlength') && modelForm.get('nombre')?.touched  ) {
+        <p class="error">El nombre debe de tener al menos 3 caracteres</p>
+        }
+        -->
     </div>
 
     <div class="mt-2">
@@ -21,6 +36,13 @@
             placeholder="Introduce tu email"
             formControlName="email"
         >
+        @if(checkControl('email', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('email', 'pattern')){
+        <p class="error">El email no sigue el patron de emails</p>
+        }
+        
     </div>
 
     <div class="mt-2">
@@ -33,6 +55,15 @@
             placeholder="Introduce tu edad"
             formControlName="edad"
         >
+        @if(checkControl('edad', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('edad', 'minlength')){
+        <p class="error">La edad no puede ser menor a 0</p>
+        }
+        @if(checkControl('edad', 'maxlength')){
+        <p class="error">La edad no puede ser mayor a 120</p>
+        }
     </div>
 
     <div class="mt-2">
@@ -45,6 +76,12 @@
             placeholder="Introduce tu DNI"
             formControlName="dni"
         >
+        @if(checkControl('dni', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('dni', 'pattern')){
+        <p class="error">El DNI no sigue el patron de los DNI</p>
+        }
     </div>
 
     <div class="mt-2">
@@ -57,6 +94,15 @@
             placeholder="Introduce tu contraseña"
             formControlName="password"
         >
+        @if(checkControl('password', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(checkControl('password', 'minlength')){
+        <p class="error">La contraseña no puede ser menor a 5 caracteres</p>
+        }
+        @if(checkControl('password', 'pattern')){
+        <p class="error">La contraseña no es lo suficientemente segura</p>
+        }
     </div>
 
     <div class="mt-2">
@@ -69,9 +115,15 @@
             placeholder="Vuelve a introduccir tu contraseña"
             formControlName="repitePassword"
         >
+        @if(checkControl('repitePassword', 'required')){
+        <p class="error">Campo requerido</p>
+        }
+        @if(modelForm.hasError('passwordnotmatches')){
+        <p class="error">La contraseña no coinciden</p>
+        }
     </div>
 
-    <input type="submit" value="Enviar" class="btn btn-secondary mt-3">
+    <input type="submit" value="Enviar" [disabled]="!modelForm.valid" class="btn btn-success mt-3">
     
 
 </form>

@@ -7,4 +7,9 @@ export class UserServices {
     console.log('Usuario registrado');
     console.log(user);
   }
+
+  actualizarUsuario(user: IUser): void {
+    console.log('Usuario actualizado');
+    console.log(user);
+  }
 }
