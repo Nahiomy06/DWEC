@@ -1,0 +1,100 @@
+<section class="container">
+    <h1>Nueva Serie</h1>
+    <hr>
+
+    <form [formGroup]="SerieForm" class="card p-3 shadow" (ngSubmit)="getDataForm()">
+        <!-- id -->
+        <div class="mt-2">
+            <label for="id" class="form-label">Id</label>
+            <input
+                type="number"
+                name="id"
+                id="id"
+                class="text form-control"
+                placeholder="Introduce tu id"
+                formControlName="id"
+            >
+        </div>
+
+        <!-- title -->
+        <div class="mt-2">
+            <label for="title" class="form-label">Title</label>
+            <input
+                type="text"
+                name="title"
+                id="title"
+                class="text form-control"
+                placeholder="Introduce tu title"
+                formControlName="title"
+            >
+        </div>
+
+        <!-- creator -->
+        <div class="mt-2">
+            <label for="creator" class="form-label">Creator</label>
+            <input
+                type="text"
+                name="creator"
+                id="creator"
+                class="text form-control"
+                placeholder="Introduce tu creator"
+                formControlName="creator"
+            >
+        </div>
+
+        <!-- rating -->
+        <div class="mt-2">
+            <label for="rating" class="form-label">Rating</label>
+            <input
+                type="number"
+                name="rating"
+                id="rating"
+                class="text form-control"
+                placeholder="Introduce tu rating"
+                formControlName="rating"
+            >
+        </div>
+
+        <!-- dates -->
+        <div class="mt-2">
+            <label for="dates" class="form-label">Dates</label>
+            <input
+                type="text"
+                name="dates"
+                id="dates"
+                class="text form-control"
+                placeholder="Introduce tu dates"
+                formControlName="dates"
+            >
+        </div>
+
+        <!-- image -->
+        <div class="mt-2">
+            <label for="image" class="form-label">Image</label>
+            <input
+                type="text"
+                name="image"
+                id="image"
+                class="text form-control"
+                placeholder="Introduce tu image"
+                formControlName="image"
+            >
+        </div>
+
+        <!-- channel -->
+        <div class="mt-2">
+            <label for="channel" class="form-label">Channel</label>
+            <input
+                type="text"
+                name="channel"
+                id="channel"
+                class="text form-control"
+                placeholder="Introduce tu channel"
+                formControlName="channel"
+            >
+        </div>
+
+        <input type="submit" value="guardar" class="btn btn-success mt-5">
+
+    </form>
+</section>
