@@ -1,0 +1,27 @@
+:host {
+    display: block;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 0.9rem;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0.75rem 1.5rem rgba(32, 43, 60, 0.12) !important;
+}
+
+.card-img-top {
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #202b3c;
+}
+
+.card-text {
+    line-height: 1.6;
+}

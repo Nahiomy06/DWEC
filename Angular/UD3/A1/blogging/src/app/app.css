@@ -1,0 +1,15 @@
+:host {
+	display: block;
+	min-height: 100vh;
+	background: #f7f8fa;
+}
+
+.encabezado {
+	padding: 1.5rem 0 1.25rem;
+	border-bottom: 1px solid #e4e8ed;
+}
+
+.encabezado h1 {
+	color: #202b3c;
+	letter-spacing: -0.04em;
+}

@@ -1,0 +1,12 @@
+:host {
+	display: block;
+}
+
+textarea.form-control {
+	min-height: 120px;
+}
+
+.btn-primary {
+	padding: 0.65rem 1.4rem;
+	font-weight: 600;
+}

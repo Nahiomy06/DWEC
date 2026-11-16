@@ -1,0 +1,19 @@
+<table class="tablaProductos">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (prod of productoService.obtenerLista(); track prod.sku) {
+        <tr app-producto [prod]="prod" [currency]="productoService.obtenerCurrency()"></tr>
+        } @empty {
+        <h3>La lista esta vacia</h3>
+        }
+
+    </tbody>
+</table>

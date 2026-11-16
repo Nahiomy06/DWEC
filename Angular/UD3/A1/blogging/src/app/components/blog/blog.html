@@ -1,0 +1,23 @@
+<section class="borde card border-0 shadow-sm mb-5">
+    <div class="card-body p-4 p-md-5">
+        <div class="mb-4">
+            <h2 class="h4 fw-bold mb-1">Añadir noticias</h2>
+        </div>
+        <app-formulario (newNoticia)="addNoticia($event)"></app-formulario>
+    </div>
+</section>
+<section aria-labelledby="news-heading">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <h2 id="news-heading" class="h4 fw-bold mb-0">Noticias</h2>
+    </div>
+
+    <div class="row g-4">
+        @for (noticia of noticias; track $index) {
+            <app-noticia class="col-12 col-md-6 col-xl-4" [noticia]="noticia"></app-noticia>
+        } @empty {
+            <div class="col-12">
+                <p class="lista-vacia text-center text-secondary mb-0">No hay noticias</p>
+            </div>
+        }
+    </div>
+</section>

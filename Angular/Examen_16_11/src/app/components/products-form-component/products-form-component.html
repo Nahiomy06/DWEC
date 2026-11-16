@@ -1,0 +1,129 @@
+<section class="container">
+    <h2>Nuevo producto</h2>
+    <hr>
+    <form [formGroup]="ProductoForm" class="card p-3 shadow" (ngSubmit)="getDataForm()">
+        <div class="mt-2">
+            <label for="id" class="form-label">Id: </label>
+            <input
+                type="text"
+                name="id"
+                id="id"
+                class="text form-control"
+                placeholder="Introduce el ID del producto..."
+                formControlName="id"
+            >
+            
+        </div>
+
+        <div class="mt-2">
+            <label for="name" class="form-label">Nombre: </label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                class="text form-control"
+                placeholder="Introduce el nombre del producto..."
+                formControlName="name"
+            >
+            @if(checkControl('name', 'required')){
+            <p class="error">Campo requerido</p>
+            }
+            @if(checkControl('name', 'minlength')){
+            <p class="error">El nombre debe de tener al menos 2 caracteres</p>
+            }
+            @if(checkControl('name', 'maxlength')){
+            <p class="error">El nombre debe de tener menos de 50 caracteres</p>
+            }
+        </div>
+
+        <div class="mt-2">
+            <label for="category" class="form-label">Categoria: </label>
+            <input
+                type="text"
+                name="category"
+                id="category"
+                class="text form-control"
+                placeholder="Introduce la categoria del producto..."
+                formControlName="category"
+            >
+            @if(checkControl('category', 'required')){
+            <p class="error">Campo requerido</p>
+            }
+            @if(checkControl('category', 'minlength')){
+            <p class="error">El nombre de la categoria debe de tener al menos 2 caracteres</p>
+            }
+            @if(checkControl('category', 'maxlength')){
+            <p class="error">El nombre de la categoria debe de tener menos de 50 caracteres</p>
+            }
+        </div>
+
+        <div class="mt-2">
+            <label for="description" class="form-label">Descripcion: </label>
+            <textarea
+                name="description"
+                id="description"
+                class="text form-control"
+                placeholder="Introduce la descripcion del producto"
+                formControlName="description"
+
+            ></textarea>
+            @if(checkControl('description', 'required')){
+            <p class="error">Campo requerido</p>
+            }
+            @if(checkControl('description', 'minlength')){
+            <p class="error">La descripcion del producto debe de tener al menos 2 caracteres</p>
+            }
+            @if(checkControl('description', 'maxlength')){
+            <p class="error">La descripcion del producto debe de tener menos de 300 caracteres</p>
+            }
+        </div>
+
+        
+        <div class="mt-2">
+            <label for="price" class="form-label">Precio: </label>
+            <input
+                type="number"
+                name="price"
+                id="price"
+                class="text form-control"
+                placeholder="Introduce el precio del producto"
+                formControlName="price"
+            >
+            @if(checkControl('price', 'required')){
+            <p class="error">Campo requerido</p>
+            }
+            @if(checkControl('price', 'min')){
+            <p class="error">El precio debe de ser al menos 0</p>
+            }
+            
+        </div>
+
+        <div class="mt-2">
+            <label for="image" class="form-label">Imagen: </label>
+            <input
+                type="text"
+                name="image"
+                id="image"
+                class="text form-control"
+                placeholder="Introduce una image para el producto"
+                formControlName="image"
+            >
+        </div>
+
+        <div class="form-check mt-5">
+            <input
+                class="form-check-input"
+                type="checkbox"
+                value="active"
+                id="active"
+                formControlName="active"
+            >
+            <label class="form-check-label" for="active"> Es el producto activo</label>
+            
+        </div>
+
+
+        <input type="submit" value="guardar" [disabled]="!ProductoForm.valid" class="btn btn-success mt-5">
+    </form>
+
+</section>

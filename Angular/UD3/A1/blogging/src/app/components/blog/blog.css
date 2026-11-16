@@ -1,0 +1,14 @@
+:host {
+	display: block;
+}
+
+.borde {
+	border-radius: 1rem;
+}
+
+.lista-vacia {
+	padding: 2rem 1rem;
+	border: 1px dashed #cbd3dd;
+	border-radius: 0.75rem;
+	background: #fff;
+}

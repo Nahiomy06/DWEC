@@ -1,0 +1,55 @@
+<form [formGroup]="addProd" (ngSubmit)="anadir()">
+
+    <div class="mb-3">
+        <label for="titulo">Titulo</label>
+        <input type="text" class="form-control" id="titulo" placeholder="Introduce el titulo del producto"
+            formControlName="title">
+
+        @if(checkControl('title', 'required')) {
+            <p class="error">Campo obligatorio</p>
+        }
+
+        @if(checkControl('title', 'minlength')) {
+            <p class="error">Minimo 3 caracteres</p>
+        }
+
+    </div>
+
+    <div class="mb-3">
+        <label for="sku" class="form-label">SKU</label>
+        <input type="text" class="form-control" id="sku" placeholder="0K3QOSOV4V" formControlName="sku">
+
+        @if(checkControl('sku', 'required')) {
+            <p class="error">Campo obligatorio</p>
+        }
+
+        @if(checkControl('sku', 'pattern')) {
+            <p class="error"> 10 caracteres, solo mayusculas y digitos</p>
+        }
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="price" placeholder="0.00" step="0.01" min="0"
+            formControlName="price">
+
+        @if(checkControl('price', 'required')) {
+            <p class="error">Campo obligatorio</p>
+        }
+
+        @if(checkControl('price', 'pattern')) {
+            <p class="error">El precio no puede ser negativo, maximo 2 decimales</p>
+        }
+    </div>
+
+    <div class="mb-3">
+        @if(addProd.hasError("skuValido")) {
+            <p class="error">El sku ya existe</p>
+        }
+
+    </div>
+
+    <div class="text-end">
+        <input type="submit" class="btn btn-primary" value="Añadir" data-bs-dismiss="modal" [disabled]="!addProd.valid">
+    </div>
+</form>

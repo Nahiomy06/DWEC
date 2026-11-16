@@ -1,0 +1,10 @@
+<div class="row">
+    <!--Los productos recien añadidos se ven al enviarlos pero los eliminados no sin el botton-->
+    <button class="btn btn-secondary container-fluid fs-3 m-4" type="button" (click)="actualizarLista()">Actualizar vista</button>
+    @for (producto of arrayProductos; track producto.id) {
+    <article class="col-12 col-md-6 col-sm-3">
+        <app-products-card-component [miProducto]="producto">
+        </app-products-card-component>
+    </article>
+    }
+</div>

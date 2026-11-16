@@ -1,0 +1,27 @@
+<section>
+  <header>
+    <h1 class="bg-danger-subtle text-white text-center py-3">Examen de Angular de DWEC</h1>
+  </header>
+
+  <main class="container-fluid">
+    <div class="container">
+      <p>
+        <button class="btn btn-secondary container-fluid fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#productForm" aria-expanded="false" aria-controls="collapseExample">
+          Nuevo producto
+        </button>
+      </p>
+      <div class="collapse" id="productForm">
+        <app-products-form-component></app-products-form-component>
+      </div>
+    </div>
+
+    <hr>
+    <!--La liste se ve pero tienes pero el servidor me anda lento, una solucion es empezar a rellenar el formulario-->
+    <app-products-list-component></app-products-list-component>
+
+  </main>
+  
+  <footer>
+    <h6 class="bg-danger-subtle text-white text-center py-3 sticky-bottom">@NCaram2026 Examen Angular</h6>
+  </footer>
+</section>

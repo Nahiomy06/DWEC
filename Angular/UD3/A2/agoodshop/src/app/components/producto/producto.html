@@ -1,0 +1,15 @@
+<td>
+    <h2>{{prod.title}}</h2>
+    <p>Ref: {{prod.sku}}</p>
+</td>
+<td>
+    <button class="boton" name="sumar" (click)="restar()">-</button>
+    <input class="cantidad" name="cantidad" type="number" min="0" [(ngModel)]="cantidad" (change)="input()">
+    <button class="boton" name="restar" (click)="sumar()">+</button>
+</td>
+<td>
+    <p>{{prod.price}}{{currency}}</p>
+</td>
+<td>
+    <p name="total" [textContent]="totalProducto"></p>
+</td>

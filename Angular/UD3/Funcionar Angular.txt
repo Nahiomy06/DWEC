@@ -1,0 +1,37 @@
+Entrar al directorio donde quiero Angular.
+
+	cd Documents/GitHub/DWEC-26-27/UD3/
+
+Crear proyecto de angular
+
+	ng new <nombreProyecto> [--skip-tests]
+
+Entrar a la carpeta del proyecto
+
+	cd <nombreProyecto>
+
+Instalar Bootstrap
+
+	npm install Bootstrap
+
+Cofigurar angular.json
+
+	Primero moficiar la parte de styles y añadir scripts para que quede asi:
+
+		"styles": [
+              		"src/styles.css",
+              		"node_modules/bootstrap/dist/css/bootstrap.min.css" 
+            	],
+		"scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"]
+
+Para ejecutar el servicio
+
+	ng s -o
+
+
+Para crear componentes
+
+	ng generate component components/componete-hijo --type=component --skip-tests
+	ng g c components/componente-hijo2 [--type=components] --skip-tests
+	
+

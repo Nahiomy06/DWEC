@@ -1,0 +1,20 @@
+<section>
+    <div class="card mb-3 p-1">
+        <div class="row g-0">
+            <div class="cold-md-4">
+                <img [src]="miProducto.image" [alt]="miProducto.name" class="img-fluid rounded-start">
+            </div>
+            
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4>{{ miProducto.name }}</h4>
+                    <h5>{{ miProducto.price }}</h5>
+                    <p>{{ miProducto.category }}</p>
+                    <p>{{ miProducto.description }}</p>
+                    <p><small class="text-body-secondary">{{ miProducto.id }}</small></p>
+                </div>
+            </div>
+            <button class="btn btn-danger" (click)="deleteProducto(miProducto)">Eliminar</button>
+        </div>
+    </div>
+</section>

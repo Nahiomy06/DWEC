@@ -1,0 +1,23 @@
+<table class="tablaTotal">
+    <thead>
+        <tr>
+            <th colspan="2">Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @for (prod of productosLista(); track prod.sku) {
+            <tr>
+                <td>x{{prod.quantity}} {{prod.title}}</td>
+                <td>{{formatearImporte(prod.price * (prod.quantity ?? 0))}}</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td>TOTAL:</td>
+            <td>{{importeTotal()}}</td>
+        </tr>
+    </tfoot>
+</table>

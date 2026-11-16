@@ -1,0 +1,44 @@
+<nav class="navbar">
+    <div class="container">
+        <div>
+            <a class="navbar-brand fw-semibold">agoodshop</a>
+        </div>
+
+        <div>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Añadir producto
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+<main class="container mt-5">
+    <div class="row align-items-start">
+        <div class="col-12 col-lg-8 mb-4 mb-lg-0">
+            <app-lista-productos></app-lista-productos>
+        </div>
+
+        <div class="col-12 col-lg-4">
+            <app-lista-total></app-lista-total>
+        </div>
+    </div>
+</main>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir nuevo producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <app-producto-form></app-producto-form>
+            </div>
+        </div>
+    </div>
+</div>

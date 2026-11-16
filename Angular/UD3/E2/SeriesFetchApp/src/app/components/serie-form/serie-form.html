@@ -1,0 +1,8 @@
+<section class="container">
+    <h1>Insertar nueva serie</h1>
+    <hr>
+
+    <form [formGroup]="serieForm" class="card p-3 shadow" (ngSubmit)="getDaraForm()">
+        <input type="submit" [disabled]="!serieForm.valid">
+    </form>
+</section>

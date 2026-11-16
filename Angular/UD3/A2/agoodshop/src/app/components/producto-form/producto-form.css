@@ -1,0 +1,10 @@
+.error {
+    display: block;
+    margin: 0.35rem 0 0 0.25rem;
+    padding-left: 0.7rem;
+    border-left: 3px solid #dc3545;
+    color: #b42318;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+}

@@ -1,0 +1,74 @@
+.tablaProductos {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+}
+
+.tablaProductos thead {
+    border-bottom: 1px solid lightgray;
+}
+
+.tablaProductos th,
+.tablaProductos td {
+    padding: 12px 8px;
+    vertical-align: middle;
+}
+
+.tablaProductos th:first-child,
+.tablaProductos td:first-child {
+    width: 40%;
+}
+
+.tablaProductos th:nth-child(2),
+.tablaProductos td:nth-child(2) {
+    width: 30%;
+}
+
+.tablaProductos th:nth-child(3),
+.tablaProductos td:nth-child(3),
+.tablaProductos th:nth-child(4),
+.tablaProductos td:nth-child(4) {
+    width: 15%;
+}
+
+.tablaProductos h2 {
+    font-size: 1.25rem;
+    overflow-wrap: anywhere;
+}
+
+.tablaProductos p {
+    margin-bottom: 0;
+}
+
+.tablaProductos tbody tr {
+    border-bottom: 1px solid lightgray;
+}
+
+
+@media (max-width: 767.98px) {
+
+    .tablaProductos th,
+    .tablaProductos td {
+        padding: 6px 3px;
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+    }
+
+    .tablaProductos h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 359.98px) {
+
+    .tablaProductos th,
+    .tablaProductos td {
+        padding-right: 1px;
+        padding-left: 1px;
+        font-size: 0.7rem;
+    }
+
+    .tablaProductos h2 {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,27 @@
+<form>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="titulo" id="inputTitulo" placeholder="name@example.com"
+            [(ngModel)]="noticia.titulo" [class.is-invalid]="tituloValido">
+        <label for="inputTitulo">Titulo de la noticia</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="url" id="inputUrl" placeholder="name@example.com"
+            [(ngModel)]="noticia.imagenURL" [class.is-invalid]="urlValido">
+        <label for="inputUrl">URL imagen</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="date" class="form-control" name="fechaPublicacion" id="fechaPublicacion" onclick="this.showPicker()"
+            [class.is-invalid]="fechaValido" [(ngModel)]="noticia.fechaPublicacion">
+        <label for="fechaPublicacion">Fecha de la noticia</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea class="form-control" name="texto" id="inputTexto" [(ngModel)]="noticia.texto"
+            [class.is-invalid]="textoValido"></textarea>
+        <label for="inputTexto">Texto de la noticia</label>
+    </div>
+
+    <button class="btn btn-primary" (click)="enviar()">Enviar</button>
+</form>
