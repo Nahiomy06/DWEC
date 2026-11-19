@@ -1,0 +1,16 @@
+<section>
+    <div class="hero p-5">
+        <div class="text-center">
+            <h1> Bienvenidos a nuestra empresa de Desarrollo Web y automatizacion con magIA</h1>
+            <p>Ofrecemos nuestros servicios full-stack</p>
+            <a href="" class="btn btn-secondary m-1">Nuestros servicios</a>
+            <a href="" class="btn btn-danger m-1">Contacto</a>
+            <form #suscribeForm="ngForm" (submit)="getSuscribe(suscribeForm)">
+                <div class="d-flex mt-3 gap-2 ">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Introduce tu email para suscribirte">
+                    <input type="submit" value="suscribirse" class="btn btn-danger">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
