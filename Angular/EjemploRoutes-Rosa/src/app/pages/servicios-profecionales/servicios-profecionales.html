@@ -1,0 +1,66 @@
+<section class="services">
+
+    <!-- Decoración -->
+    <div class="deco" aria-hidden="true">
+        <span class="deco__blob deco__blob--pink"></span>
+        <span class="deco__blob deco__blob--mint"></span>
+        <span class="deco__dots deco__dots--top"></span>
+        <span class="deco__dots deco__dots--bottom"></span>
+        <span class="deco__ring"></span>
+        <span class="deco__square"></span>
+        <span class="deco__circle"></span>
+
+        <svg class="deco__squiggle" viewBox="0 0 120 20" fill="none">
+            <path
+                d="M2 10 Q12 0 22 10 T42 10 T62 10 T82 10 T102 10 T118 10"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+            />
+        </svg>
+        <svg class="deco__star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/>
+        </svg>
+    </div>
+
+    <div class="container services__inner">
+
+        <header class="services__head">
+            <div class="services__titlebox">
+                <h1 class="services__title">Nuestros servicios</h1>
+                <svg
+                    class="services__underline"
+                    viewBox="0 0 300 20"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M3 14 C 60 2, 120 20, 180 8 S 270 6, 297 12"
+                        stroke="currentColor"
+                        stroke-width="8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <p class="services__intro">Desarrollo web full-stack y automatización con IA.</p>
+        </header>
+
+        <div class="row g-4">
+            @for (servicioProf of arraySeviciosProf; track servicioProf.id) {
+            <article class="col-12 col-md-6 col-lg-4 services__item">
+                <app-servicios-card [miServicioProf]="servicioProf"></app-servicios-card>
+            </article>
+            }
+            @empty {
+            <div class="col-12">
+                <div class="empty">
+                    <p class="empty__title">No hay servicios disponibles</p>
+                    <p class="empty__text">Estamos preparando el catálogo. Mientras tanto, cuéntanos qué necesitas.</p>
+                    <a class="empty__btn" href="/contacto">Contactar</a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>

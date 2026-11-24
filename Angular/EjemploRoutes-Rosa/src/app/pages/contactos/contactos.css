@@ -1,0 +1,563 @@
+:host {
+    --bg: #fff0f7;
+    --ink: #2a0f2e;
+    --pink: #ff4fa3;
+    --coral: #ff7a59;
+    --sun: #ffc93c;
+    --mint: #2ed1a2;
+    --paper: #ffffff;
+
+    display: block;
+    color: var(--ink);
+    font-family:
+        "Sora",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* ================= Contenedor ================= */
+.contact {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--bg);
+    padding: clamp(3rem, 7vw, 5rem) clamp(1.25rem, 5vw, 3rem)
+        clamp(9rem, 15vw, 12rem);
+}
+
+.contact__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    animation: reveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* ================= Decoraciones ================= */
+.deco {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.deco > * {
+    position: absolute;
+    display: block;
+}
+
+.deco__blob {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+}
+.deco__blob--pink {
+    width: clamp(240px, 34vw, 440px);
+    aspect-ratio: 1;
+    top: -110px;
+    right: -100px;
+    background: var(--pink);
+    opacity: 0.3;
+}
+.deco__blob--mint {
+    width: clamp(160px, 22vw, 280px);
+    aspect-ratio: 1;
+    top: 40%;
+    left: -90px;
+    background: var(--mint);
+    opacity: 0.22;
+    border-radius: 40% 60% 38% 62% / 55% 40% 60% 45%;
+}
+.deco__blob--coral {
+    width: clamp(200px, 28vw, 340px);
+    aspect-ratio: 1;
+    bottom: 80px;
+    right: -100px;
+    background: var(--coral);
+    opacity: 0.16;
+    border-radius: 52% 48% 33% 67% / 46% 57% 43% 54%;
+}
+
+.deco__dots {
+    width: 150px;
+    height: 110px;
+    background-image: radial-gradient(var(--pink) 2.5px, transparent 2.5px);
+    background-size: 18px 18px;
+    opacity: 0.55;
+}
+.deco__dots--top {
+    top: 44px;
+    left: 4%;
+}
+.deco__dots--bottom {
+    bottom: 160px;
+    left: 8%;
+    background-image: radial-gradient(var(--coral) 2.5px, transparent 2.5px);
+}
+
+.deco__ring {
+    width: 100px;
+    height: 100px;
+    top: 12%;
+    right: 12%;
+    border: 13px solid var(--sun);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite;
+}
+.deco__ring--small {
+    width: 44px;
+    height: 44px;
+    bottom: 28%;
+    left: 4%;
+    border: 7px solid var(--coral);
+    animation-delay: -3s;
+}
+
+.deco__square {
+    width: 58px;
+    height: 58px;
+    top: 52%;
+    right: 6%;
+    background: var(--mint);
+    border: 4px solid var(--ink);
+    border-radius: 10px;
+    rotate: 18deg;
+    animation: float 8s ease-in-out infinite -2s;
+}
+.deco__triangle {
+    width: 50px;
+    height: 44px;
+    top: 26%;
+    left: 6%;
+    background: var(--sun);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    rotate: -14deg;
+}
+.deco__circle {
+    width: 26px;
+    height: 26px;
+    top: 9%;
+    left: 36%;
+    border-radius: 50%;
+    background: var(--coral);
+}
+.deco__squiggle {
+    width: 115px;
+    height: 18px;
+    top: 28%;
+    right: 4%;
+    color: var(--coral);
+}
+.deco__plus {
+    width: 26px;
+    height: 26px;
+    color: var(--ink);
+}
+.deco__plus--a {
+    top: 18%;
+    left: 24%;
+}
+.deco__plus--b {
+    bottom: 32%;
+    right: 22%;
+    color: var(--pink);
+}
+.deco__star {
+    width: 40px;
+    height: 40px;
+    top: 16%;
+    right: 28%;
+    color: var(--sun);
+    animation: spin 18s linear infinite;
+}
+
+.contact__wave {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(70px, 10vw, 120px);
+    color: var(--pink);
+}
+
+/* ================= Cabecera ================= */
+.contact__head {
+    margin-bottom: clamp(2.25rem, 5vw, 3.25rem);
+    text-align: center;
+}
+
+.contact__titlebox {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    padding-bottom: 1.1rem;
+}
+
+.contact__title {
+    margin: 0;
+    font-size: clamp(2.1rem, 6vw, 3.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+.contact__underline {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: min(80%, 340px);
+    height: 16px;
+    translate: -50% 0;
+    color: var(--coral);
+}
+
+.contact__badge {
+    display: inline-block;
+    margin: 1.25rem 0 0;
+    padding: 0.65rem 1.2rem;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: 5px 5px 0 var(--ink);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    font-weight: 700;
+    rotate: -1deg;
+}
+
+.contact__intro {
+    margin: 1.25rem auto 0;
+    max-width: 46ch;
+    font-size: clamp(1rem, 1.9vw, 1.15rem);
+    line-height: 1.55;
+    color: #4a2250;
+}
+
+/* ================= Tarjeta del Formulario ================= */
+.form-card {
+    position: relative;
+    padding: clamp(2.25rem, 5vw, 3rem) clamp(1.35rem, 4vw, 2.5rem) 2.25rem;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+    box-shadow: 10px 10px 0 var(--mint);
+}
+
+/* Cinta superior */
+.form-card::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    width: 110px;
+    height: 30px;
+    background: var(--pink);
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    translate: -50% 0;
+    rotate: -4deg;
+}
+
+/* Círculo en la esquina */
+.form-card::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    width: 36px;
+    height: 36px;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+}
+
+.form-card__dots {
+    position: absolute;
+    top: 20px;
+    right: 18px;
+    width: 60px;
+    height: 60px;
+    background-image: radial-gradient(var(--pink) 2.5px, transparent 2.5px);
+    background-size: 12px 12px;
+}
+
+.form-card__star {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    color: var(--coral);
+}
+
+/* ================= Campos ================= */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+}
+
+.form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    text-align: left;
+}
+
+.field__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.field__label {
+    font-weight: 700;
+    font-size: 0.98rem;
+}
+
+.field__counter {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #6b3d72;
+}
+
+.field__input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem 1rem;
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    transition:
+        box-shadow 0.12s,
+        border-color 0.12s;
+}
+
+.field__input::placeholder {
+    color: #8b6a90;
+}
+
+.field__input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--pink);
+}
+
+.field__textarea {
+    resize: vertical;
+    min-height: 125px;
+}
+
+.field__select {
+    cursor: pointer;
+}
+
+.field__input--invalid {
+    border-color: var(--coral);
+    background: #fff7f5;
+}
+
+.field__input--invalid:focus {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--coral) 45%, transparent);
+}
+
+.field__error {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #b82514;
+}
+
+/* ================= Checkbox ================= */
+.check {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.check__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.check__box {
+    flex: 0 0 24px;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    border: 3px solid var(--ink);
+    border-radius: 7px;
+    background: #fff;
+    box-shadow: 2px 2px 0 var(--ink);
+    display: grid;
+    place-items: center;
+    transition:
+        background 0.12s,
+        transform 0.12s;
+}
+
+.check__input:checked + .check__box {
+    background: var(--mint);
+}
+
+.check__input:checked + .check__box::after {
+    content: "";
+    width: 6px;
+    height: 12px;
+    border: solid var(--ink);
+    border-width: 0 3px 3px 0;
+    rotate: 42deg;
+    margin-bottom: 2px;
+}
+
+.check__input:focus-visible + .check__box {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+.check__label {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: #4a2250;
+}
+
+/* ================= Botones ================= */
+.form__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 0.4rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.55rem;
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition:
+        translate 0.12s,
+        box-shadow 0.12s;
+}
+
+.btn:hover:not(:disabled) {
+    translate: -2px -2px;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.btn:active:not(:disabled) {
+    translate: 2px 2px;
+    box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+.btn--pink {
+    background: var(--pink);
+}
+.btn--sun {
+    background: var(--sun);
+}
+
+/* ================= Estado Enviado ================= */
+.alert {
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    background: #f2fff9;
+    border: 3px dashed var(--ink);
+    border-radius: 18px;
+}
+
+.alert__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+
+.alert__text {
+    margin: 0 auto 1.5rem;
+    max-width: 44ch;
+    line-height: 1.55;
+    color: #4a2250;
+}
+
+/* ================= Movimiento ================= */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes float {
+    50% {
+        translate: 0 -14px;
+    }
+}
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact__inner,
+    .deco__ring,
+    .deco__square,
+    .deco__star {
+        animation: none;
+    }
+    .btn,
+    .field__input,
+    .check__box {
+        transition: none;
+    }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 640px) {
+    .form__grid {
+        grid-template-columns: 1fr;
+    }
+    .form__actions {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    .deco__dots--bottom,
+    .deco__triangle,
+    .deco__plus--a,
+    .deco__squiggle {
+        display: none;
+    }
+}

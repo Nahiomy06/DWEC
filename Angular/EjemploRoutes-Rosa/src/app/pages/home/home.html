@@ -1,0 +1,87 @@
+<section class="hero">
+
+    <!-- Capa decorativa -->
+    <div class="deco" aria-hidden="true">
+        <span class="deco__blob deco__blob--pink"></span>
+        <span class="deco__blob deco__blob--mint"></span>
+        <span class="deco__blob deco__blob--coral"></span>
+        <span class="deco__dots deco__dots--top"></span>
+        <span class="deco__dots deco__dots--bottom"></span>
+        <span class="deco__ring"></span>
+        <span class="deco__ring deco__ring--small"></span>
+        <span class="deco__square"></span>
+        <span class="deco__triangle"></span>
+        <span class="deco__circle"></span>
+
+        <svg class="deco__squiggle" viewBox="0 0 120 20" fill="none">
+            <path
+                d="M2 10 Q12 0 22 10 T42 10 T62 10 T82 10 T102 10 T118 10"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+            />
+        </svg>
+        <svg class="deco__plus deco__plus--a" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="deco__plus deco__plus--b" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="deco__star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/>
+        </svg>
+    </div>
+
+    <div class="hero__inner">
+        <div class="hero__titlebox">
+            <h1 class="hero__title">
+                Bienvenidos a nuestra empresa de Desarrollo Web y automatización con magIA
+            </h1>
+            <svg
+                class="hero__underline"
+                viewBox="0 0 300 20"
+                preserveAspectRatio="none"
+                fill="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M3 14 C 60 2, 120 20, 180 8 S 270 6, 297 12"
+                    stroke="currentColor"
+                    stroke-width="8"
+                    stroke-linecap="round"
+                />
+            </svg>
+        </div>
+
+        <p class="hero__subtitle">Ofrecemos nuestros servicios full-stack</p>
+
+        <div class="hero__actions">
+            <a class="btn btn--ink" [routerLink]="'/servicio'">Nuestros servicios</a>
+            <a class="btn btn--sun" [routerLink]="'/contacto'">Contacto</a>
+        </div>
+
+        <form #suscribeForm="ngForm" (submit)="getSuscribe(suscribeForm)" class="subscribe">
+            <label class="subscribe__label" for="email">Suscríbete a nuestras novedades</label>
+            <div class="subscribe__row">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="subscribe__input"
+                    placeholder="Introduce tu email para suscribirte"
+                    autocomplete="email"
+                    ngModel
+                    required
+                >
+                <button type="submit" class="btn btn--pink">Suscribirse</button>
+            </div>
+        </form>
+    </div>
+
+    <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path
+            fill="currentColor"
+            d="M0 64 C 180 120, 360 0, 540 48 S 900 120, 1080 56 S 1360 8, 1440 56 V120 H0Z"
+        />
+    </svg>
+</section>

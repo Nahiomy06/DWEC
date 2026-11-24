@@ -1,1 +1,14 @@
-<p>servicios-profecionales works!</p>
+
+<section class="container mt-3">
+    <hr>
+    <div class="row g-3">
+        @for (servicioProf of arraySeviciosProf; track servicioProf.id) {
+        <article class="col-12 col-md-6 col-lg-4">
+            <app-servicios-card [miServicioProf]="servicioProf"></app-servicios-card>
+        </article>  
+        }
+        @empty {
+        <p>No hay servicios disponibles</p>
+        }
+    </div>
+</section>

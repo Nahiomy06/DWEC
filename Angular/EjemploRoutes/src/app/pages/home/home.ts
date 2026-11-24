@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { ServiceProfesionalesService } from '../../services/servicios-profecionales-service';
+import { Router, RouterLink } from '@angular/router';
+import { email } from '@angular/forms/signals';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
 export class Home {
-  getSuscribe(suscribeForm: any) {}
+  private miServicio = inject(ServiceProfesionalesService);
+  private router = inject(Router);
+
+  getSuscribe(suscribeForm: NgForm) {
+    if (suscribeForm.value.email !== '') {
+      let email = suscribeForm.value.email;
+      this.miServicio.registrarMail(email);
+      this.router.navigate(['/servicio']);
+      suscribeForm.reset();
+    }
+  }
 }

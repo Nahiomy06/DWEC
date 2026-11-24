@@ -1,0 +1,152 @@
+:host {
+    --ink: #2a0f2e;
+    --pink: #ff4fa3;
+    --coral: #ff7a59;
+    --sun: #ffc93c;
+    --mint: #2ed1a2;
+    --paper: #ffffff;
+    --accent: var(--pink);
+
+    display: block;
+    height: 100%;
+    color: var(--ink);
+    font-family:
+        "Sora",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* Cada tarjeta de una lista cambia de color de acento */
+:host(:nth-child(3n + 2)) {
+    --accent: var(--mint);
+}
+:host(:nth-child(3n + 3)) {
+    --accent: var(--sun);
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2.25rem 1.5rem 1.75rem;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+    box-shadow: 8px 8px 0 var(--accent);
+    text-align: center;
+    transition:
+        translate 0.15s,
+        box-shadow 0.15s;
+}
+.card:hover {
+    translate: -3px -3px;
+    box-shadow: 11px 11px 0 var(--accent);
+}
+
+/* Cinta superior */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    width: 90px;
+    height: 28px;
+    background: var(--accent);
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    translate: -50% 0;
+    rotate: -4deg;
+}
+/* Círculo en la esquina */
+.card::after {
+    content: "";
+    position: absolute;
+    right: -16px;
+    bottom: -16px;
+    width: 32px;
+    height: 32px;
+    background: var(--coral);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+}
+
+.card__dots {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    width: 54px;
+    height: 54px;
+    background-image: radial-gradient(var(--accent) 2.5px, transparent 2.5px);
+    background-size: 12px 12px;
+}
+.card__star {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    width: 24px;
+    height: 24px;
+    color: var(--coral);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+}
+
+.card__squiggle {
+    width: 80px;
+    height: 10px;
+    margin: 0.8rem 0;
+    color: var(--pink);
+}
+
+.card__subtitle {
+    margin: 0 0 1.5rem;
+    line-height: 1.55;
+    color: #4a2250;
+}
+
+.btn {
+    margin-top: auto; /* alinea todos los botones abajo aunque el texto varíe */
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background: var(--pink);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 var(--ink);
+    color: var(--ink);
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        translate 0.12s,
+        box-shadow 0.12s;
+}
+.btn:hover {
+    translate: -2px -2px;
+    box-shadow: 5px 5px 0 var(--ink);
+}
+.btn:active {
+    translate: 2px 2px;
+    box-shadow: 1px 1px 0 var(--ink);
+}
+.btn:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .card,
+    .btn {
+        transition: none;
+    }
+}

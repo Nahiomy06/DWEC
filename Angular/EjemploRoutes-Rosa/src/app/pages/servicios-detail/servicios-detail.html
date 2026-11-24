@@ -1,0 +1,89 @@
+<section class="service">
+
+    <!-- Capa decorativa (no la leen los lectores de pantalla) -->
+    <div class="deco" aria-hidden="true">
+        <span class="deco__blob deco__blob--pink"></span>
+        <span class="deco__blob deco__blob--mint"></span>
+        <span class="deco__blob deco__blob--coral"></span>
+        <span class="deco__dots deco__dots--top"></span>
+        <span class="deco__dots deco__dots--bottom"></span>
+        <span class="deco__ring"></span>
+        <span class="deco__ring deco__ring--small"></span>
+        <span class="deco__square"></span>
+        <span class="deco__triangle"></span>
+        <span class="deco__circle"></span>
+
+        <svg class="deco__squiggle" viewBox="0 0 120 20" fill="none">
+            <path
+                d="M2 10 Q12 0 22 10 T42 10 T62 10 T82 10 T102 10 T118 10"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+            />
+        </svg>
+
+        <svg class="deco__plus deco__plus--a" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="deco__plus deco__plus--b" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+
+        <svg class="deco__star" viewBox="0 0 24 24">
+            <path
+                fill="currentColor"
+                d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"
+            />
+        </svg>
+    </div>
+
+    <div class="service__inner">
+        <a class="service__back" href="/servicios">Volver a servicios</a>
+
+        <header class="service__head">
+            <span class="service__badge">Servicio profesional</span>
+
+            <div class="service__titlebox">
+                <h1 class="service__title">{{ miServicioProfesional.title }}</h1>
+                <svg
+                    class="service__underline"
+                    viewBox="0 0 300 20"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M3 14 C 60 2, 120 20, 180 8 S 270 6, 297 12"
+                        stroke="currentColor"
+                        stroke-width="8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+
+            <h2 class="service__subtitle">{{ miServicioProfesional.subtitle }}</h2>
+        </header>
+
+        <div class="service__body">
+            <article class="card card--description" aria-labelledby="desc-title">
+                <h3 id="desc-title" class="card__title">Qué incluye</h3>
+                <p class="card__text">{{ miServicioProfesional.description }}</p>
+            </article>
+
+            <aside class="card card--cta" aria-label="Contratar servicio">
+                <p class="card__cta-text">
+                    Cuéntanos qué necesitas y te respondemos con una propuesta a medida.
+                </p>
+                <a class="btn btn--sun" href="/contacto">Solicitar presupuesto</a>
+                <a class="btn btn--outline" href="/contacto">Hacer una consulta</a>
+            </aside>
+        </div>
+    </div>
+
+    <svg class="service__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path
+            fill="currentColor"
+            d="M0 64 C 180 120, 360 0, 540 48 S 900 120, 1080 56 S 1360 8, 1440 56 V120 H0Z"
+        />
+    </svg>
+</section>

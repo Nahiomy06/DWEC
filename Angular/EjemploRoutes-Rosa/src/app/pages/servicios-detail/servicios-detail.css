@@ -1,0 +1,452 @@
+:host {
+    --bg: #fff0f7;
+    --ink: #2a0f2e;
+    --pink: #ff4fa3;
+    --coral: #ff7a59;
+    --sun: #ffc93c;
+    --mint: #2ed1a2;
+    --paper: #ffffff;
+
+    display: block;
+    color: var(--ink);
+    font-family:
+        "Sora",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* ================= Contenedor ================= */
+.service {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--bg);
+    padding: clamp(2rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem)
+        clamp(9rem, 16vw, 12rem);
+}
+
+.service__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/* ================= Decoraciones ================= */
+.deco {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.deco > * {
+    position: absolute;
+    display: block;
+}
+
+/* Manchas orgánicas */
+.deco__blob {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+}
+.deco__blob--pink {
+    width: clamp(260px, 38vw, 480px);
+    aspect-ratio: 1;
+    top: -120px;
+    right: -110px;
+    background: var(--pink);
+    opacity: 0.3;
+}
+.deco__blob--mint {
+    width: clamp(160px, 22vw, 280px);
+    aspect-ratio: 1;
+    top: 38%;
+    left: -90px;
+    background: var(--mint);
+    opacity: 0.22;
+    border-radius: 40% 60% 38% 62% / 55% 40% 60% 45%;
+}
+.deco__blob--coral {
+    width: clamp(200px, 28vw, 340px);
+    aspect-ratio: 1;
+    bottom: 90px;
+    right: -100px;
+    background: var(--coral);
+    opacity: 0.16;
+    border-radius: 52% 48% 33% 67% / 46% 57% 43% 54%;
+}
+
+/* Cuadrículas de puntos */
+.deco__dots {
+    width: 150px;
+    height: 110px;
+    background-image: radial-gradient(var(--pink) 2.5px, transparent 2.5px);
+    background-size: 18px 18px;
+    opacity: 0.55;
+}
+.deco__dots--top {
+    top: 48px;
+    left: 4%;
+}
+.deco__dots--bottom {
+    bottom: 170px;
+    left: 8%;
+    background-image: radial-gradient(var(--coral) 2.5px, transparent 2.5px);
+}
+
+/* Anillos */
+.deco__ring {
+    width: 110px;
+    height: 110px;
+    top: 14%;
+    right: 12%;
+    border: 14px solid var(--sun);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite;
+}
+.deco__ring--small {
+    width: 46px;
+    height: 46px;
+    top: auto;
+    right: auto;
+    bottom: 30%;
+    left: 3%;
+    border: 7px solid var(--coral);
+    animation-delay: -3s;
+}
+
+/* Cuadrado girado */
+.deco__square {
+    width: 64px;
+    height: 64px;
+    top: 52%;
+    right: 6%;
+    background: var(--mint);
+    border: 4px solid var(--ink);
+    border-radius: 10px;
+    rotate: 18deg;
+    animation: float 8s ease-in-out infinite -2s;
+}
+
+/* Triángulo */
+.deco__triangle {
+    width: 54px;
+    height: 48px;
+    top: 30%;
+    left: 5%;
+    background: var(--sun);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    rotate: -14deg;
+}
+
+/* Círculo sólido */
+.deco__circle {
+    width: 28px;
+    height: 28px;
+    top: 9%;
+    left: 38%;
+    border-radius: 50%;
+    background: var(--coral);
+}
+
+/* Ondas, cruces y estrella */
+.deco__squiggle {
+    width: 120px;
+    height: 20px;
+    top: 26%;
+    right: 4%;
+    color: var(--coral);
+}
+.deco__plus {
+    width: 28px;
+    height: 28px;
+    color: var(--ink);
+}
+.deco__plus--a {
+    top: 20%;
+    left: 26%;
+}
+.deco__plus--b {
+    bottom: 36%;
+    right: 26%;
+    color: var(--pink);
+}
+.deco__star {
+    width: 44px;
+    height: 44px;
+    top: 62%;
+    left: 44%;
+    color: var(--sun);
+    animation: spin 18s linear infinite;
+}
+
+/* Onda inferior */
+.service__wave {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(70px, 10vw, 120px);
+    color: var(--pink);
+}
+
+/* ================= Cabecera ================= */
+.service__back {
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 0.4rem 0.9rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+.service__back:hover {
+    background: var(--sun);
+}
+
+.service__head {
+    animation: reveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.service__badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    background: var(--pink);
+    font-size: 0.85rem;
+    font-weight: 600;
+    rotate: -3deg;
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.service__titlebox {
+    position: relative;
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding-bottom: 1.1rem;
+    max-width: 100%;
+}
+
+.service__title {
+    margin: 0;
+    max-width: 15ch;
+    font-size: clamp(2.5rem, 7.5vw, 5.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    text-wrap: balance;
+}
+
+.service__underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: min(100%, 420px);
+    height: 18px;
+    color: var(--coral);
+}
+
+.service__subtitle {
+    display: inline-block;
+    margin: 1.5rem 0 0;
+    max-width: 40ch;
+    padding: 0.9rem 1.25rem;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    box-shadow: 6px 6px 0 var(--ink);
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    font-weight: 600;
+    line-height: 1.4;
+    rotate: -1deg;
+}
+
+/* ================= Tarjetas ================= */
+.service__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: clamp(2rem, 5vw, 3.5rem);
+    align-items: start;
+    margin-top: clamp(3rem, 7vw, 5rem);
+}
+
+.card {
+    position: relative;
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+}
+
+.card--description {
+    background: var(--paper);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    box-shadow: 10px 10px 0 var(--pink);
+}
+/* "Cinta" decorativa */
+.card--description::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    width: 110px;
+    height: 30px;
+    background: var(--mint);
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    translate: -50% 0;
+    rotate: -4deg;
+}
+/* Esquina con círculo */
+.card--description::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    bottom: -22px;
+    width: 44px;
+    height: 44px;
+    background: var(--coral);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+}
+
+.card__title {
+    margin: 0 0 1rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.card__text {
+    margin: 0;
+    max-width: 60ch;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #4a2250;
+    white-space: pre-line; /* respeta los saltos de línea de tus datos */
+}
+
+.card--cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.75rem;
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 8px 8px 0 var(--sun);
+    rotate: 1.5deg;
+}
+.card--cta::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    right: 22px;
+    width: 36px;
+    height: 36px;
+    background: var(--coral);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+}
+
+.card__cta-text {
+    margin: 0 0 0.4rem;
+    line-height: 1.55;
+    color: #ffd9ec;
+}
+
+/* ================= Botones ================= */
+.btn {
+    display: block;
+    padding: 0.9rem 1.25rem;
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    font: inherit;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition:
+        translate 0.12s,
+        box-shadow 0.12s;
+}
+.btn--sun {
+    background: var(--sun);
+    color: var(--ink);
+    border-color: var(--sun);
+    box-shadow: 4px 4px 0 var(--coral);
+}
+.btn--outline {
+    color: #fff;
+    border-color: #fff;
+}
+.btn:hover {
+    translate: -2px -2px;
+}
+.btn--sun:hover {
+    box-shadow: 6px 6px 0 var(--coral);
+}
+.btn--outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.btn:focus-visible,
+.service__back:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+.card--cta .btn:focus-visible {
+    outline-color: var(--sun);
+}
+
+/* ================= Movimiento ================= */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes float {
+    50% {
+        translate: 0 -14px;
+    }
+}
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service__head,
+    .deco__ring,
+    .deco__square,
+    .deco__star {
+        animation: none;
+    }
+    .btn {
+        transition: none;
+    }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 860px) {
+    .service__body {
+        grid-template-columns: 1fr;
+    }
+    .card--cta {
+        rotate: 0deg;
+    }
+    .deco__dots--bottom,
+    .deco__triangle,
+    .deco__plus--a,
+    .deco__squiggle {
+        display: none;
+    }
+}

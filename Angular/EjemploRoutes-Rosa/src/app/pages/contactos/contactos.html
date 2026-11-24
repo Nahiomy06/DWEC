@@ -1,0 +1,227 @@
+<section class="contact">
+
+    <!-- Capa decorativa -->
+    <div class="deco" aria-hidden="true">
+        <span class="deco__blob deco__blob--pink"></span>
+        <span class="deco__blob deco__blob--mint"></span>
+        <span class="deco__blob deco__blob--coral"></span>
+        <span class="deco__dots deco__dots--top"></span>
+        <span class="deco__dots deco__dots--bottom"></span>
+        <span class="deco__ring"></span>
+        <span class="deco__ring deco__ring--small"></span>
+        <span class="deco__square"></span>
+        <span class="deco__triangle"></span>
+        <span class="deco__circle"></span>
+
+        <svg class="deco__squiggle" viewBox="0 0 120 20" fill="none">
+            <path
+                d="M2 10 Q12 0 22 10 T42 10 T62 10 T82 10 T102 10 T118 10"
+                stroke="currentColor"
+                stroke-width="4"
+                stroke-linecap="round"
+            />
+        </svg>
+        <svg class="deco__plus deco__plus--a" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="deco__plus deco__plus--b" viewBox="0 0 24 24" fill="none">
+            <path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <svg class="deco__star" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/>
+        </svg>
+    </div>
+
+    <div class="contact__inner">
+
+        <!-- Cabecera -->
+        <header class="contact__head">
+            <div class="contact__titlebox">
+                <h1 class="contact__title">Hablemos de tu proyecto</h1>
+                <svg
+                    class="contact__underline"
+                    viewBox="0 0 300 20"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M3 14 C 60 2, 120 20, 180 8 S 270 6, 297 12"
+                        stroke="currentColor"
+                        stroke-width="8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+            </div>
+            <p class="contact__badge">Desarrollo web full-stack &amp; automatización con IA</p>
+            <p class="contact__intro">
+                Cuéntanos qué necesitas automatizar o construir y te responderemos lo antes posible.
+            </p>
+        </header>
+
+        <!-- Tarjeta del formulario reactivo -->
+        <article class="form-card">
+            <span class="form-card__dots" aria-hidden="true"></span>
+            <svg class="form-card__star" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/>
+            </svg>
+
+            @if (enviado) {
+            <div class="alert alert--success" role="status">
+                <p class="alert__title">¡Mensaje enviado con éxito!</p>
+                <p class="alert__text">
+                    Gracias por escribirnos, {{ contactForm.value.nombre }}. Revisaremos tu consulta y nos pondremos en contacto contigo pronto.
+                </p>
+                <button type="button" class="btn btn--sun" (click)="resetForm()">
+                    Enviar otro mensaje
+                </button>
+            </div>
+            } @else {
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form" novalidate>
+
+                <div class="form__grid">
+                    <!-- Nombre -->
+                    <div class="field">
+                        <label class="field__label" for="nombre">Nombre *</label>
+                        <input
+                            id="nombre"
+                            type="text"
+                            class="field__input"
+                            formControlName="nombre"
+                            placeholder="Tu nombre"
+                            autocomplete="name"
+                            [class.field__input--invalid]="isInvalid('nombre')"
+                        >
+                        @if (isInvalid('nombre')) {
+                        <span class="field__error" role="alert">
+                            @if (contactForm.get('nombre')?.hasError('required')) {
+                            El nombre es obligatorio.
+                            } @else if (contactForm.get('nombre')?.hasError('minlength')) {
+                            Escribe al menos 2 caracteres.
+                            }
+                        </span>
+                        }
+                    </div>
+
+                    <!-- Email -->
+                    <div class="field">
+                        <label class="field__label" for="email">Correo electrónico *</label>
+                        <input
+                            id="email"
+                            type="email"
+                            class="field__input"
+                            formControlName="email"
+                            placeholder="tu@correo.com"
+                            autocomplete="email"
+                            [class.field__input--invalid]="isInvalid('email')"
+                        >
+                        @if (isInvalid('email')) {
+                        <span class="field__error" role="alert">
+                            @if (contactForm.get('email')?.hasError('required')) {
+                            El correo electrónico es obligatorio.
+                            } @else if (contactForm.get('email')?.hasError('email')) {
+                            Introduce un correo electrónico válido.
+                            }
+                        </span>
+                        }
+                    </div>
+                </div>
+
+                <div class="form__grid">
+                    <!-- Empresa / Proyecto -->
+                    <div class="field">
+                        <label class="field__label" for="empresa">Empresa o proyecto</label>
+                        <input
+                            id="empresa"
+                            type="text"
+                            class="field__input"
+                            formControlName="empresa"
+                            placeholder="Opcional"
+                            autocomplete="organization"
+                        >
+                    </div>
+
+                    <!-- Servicio de interés -->
+                    <div class="field">
+                        <label class="field__label" for="servicio">¿Qué te interesa? *</label>
+                        <select
+                            id="servicio"
+                            class="field__input field__select"
+                            formControlName="servicio"
+                            [class.field__input--invalid]="isInvalid('servicio')"
+                        >
+                            <option value="" disabled>Selecciona una opción</option>
+                            <option value="web-fullstack">Desarrollo web full-stack</option>
+                            <option value="automatizacion-ia">Automatización con IA</option>
+                            <option value="ambos">Web + Automatización con IA</option>
+                            <option value="consultoria">Consultoría / Otro</option>
+                        </select>
+                        @if (isInvalid('servicio')) {
+                        <span class="field__error" role="alert">
+                            Selecciona un tipo de servicio.
+                        </span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Mensaje -->
+                <div class="field">
+                    <div class="field__top">
+                        <label class="field__label" for="mensaje">Mensaje *</label>
+                        <span class="field__counter">
+                            {{ contactForm.get('mensaje')?.value?.length || 0 }} / 1000
+                        </span>
+                    </div>
+                    <textarea id="mensaje" rows="5" class="field__input field__textarea"
+                      formControlName="mensaje"
+                      placeholder="Cuéntanos sobre tu idea, plazos o procesos que quieres automatizar..."
+                      [class.field__input--invalid]="isInvalid('mensaje')"></textarea>
+                    @if (isInvalid('mensaje')) {
+                    <span class="field__error" role="alert">
+                        @if (contactForm.get('mensaje')?.hasError('required')) {
+                        Cuéntanos brevemente en qué podemos ayudarte.
+                        } @else if (contactForm.get('mensaje')?.hasError('minlength')) {
+                        Escribe al menos 15 caracteres para entender mejor tu consulta.
+                        } @else if (contactForm.get('mensaje')?.hasError('maxlength')) {
+                        El mensaje no puede superar los 1000 caracteres.
+                        }
+                    </span>
+                    }
+                </div>
+
+                <!-- Aceptación de privacidad -->
+                <div class="field field--checkbox">
+                    <label class="check">
+                        <input type="checkbox" class="check__input" formControlName="aceptaPolitica">
+                        <span class="check__box" aria-hidden="true"></span>
+                        <span class="check__label">
+                            Acepto la política de privacidad y el tratamiento de mis datos para responder a mi consulta. *
+                        </span>
+                    </label>
+                    @if (isInvalid('aceptaPolitica')) {
+                    <span class="field__error" role="alert">
+                        Debes aceptar la política de privacidad para continuar.
+                    </span>
+                    }
+                </div>
+
+                <div class="form__actions">
+                    <button type="submit" class="btn btn--pink" [disabled]="enviando">
+                        {{ enviando ? 'Enviando...' : 'Enviar mensaje' }}
+                    </button>
+                    <a class="btn btn--sun" [routerLink]="'/servicio'">Ver servicios</a>
+                </div>
+            </form>
+            }
+        </article>
+
+    </div>
+
+    <!-- Onda inferior -->
+    <svg class="contact__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path
+            fill="currentColor"
+            d="M0 64 C 180 120, 360 0, 540 48 S 900 120, 1080 56 S 1360 8, 1440 56 V120 H0Z"
+        />
+    </svg>
+</section>

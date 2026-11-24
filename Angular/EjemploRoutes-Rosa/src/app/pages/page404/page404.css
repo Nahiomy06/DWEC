@@ -1,0 +1,400 @@
+:host {
+    --bg: #fff0f7;
+    --ink: #2a0f2e;
+    --pink: #ff4fa3;
+    --coral: #ff7a59;
+    --sun: #ffc93c;
+    --mint: #2ed1a2;
+    --paper: #ffffff;
+
+    display: block;
+    color: var(--ink);
+    font-family:
+        "Sora",
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        sans-serif;
+}
+
+/* ================= Contenedor ================= */
+.not-found {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg);
+    padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem)
+        clamp(9rem, 15vw, 11rem);
+}
+
+.not-found__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    animation: reveal 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* ================= Decoraciones ================= */
+.deco {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+.deco > * {
+    position: absolute;
+    display: block;
+}
+
+.deco__blob {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+}
+.deco__blob--pink {
+    width: clamp(240px, 34vw, 420px);
+    aspect-ratio: 1;
+    top: -110px;
+    right: -100px;
+    background: var(--pink);
+    opacity: 0.3;
+}
+.deco__blob--mint {
+    width: clamp(160px, 22vw, 280px);
+    aspect-ratio: 1;
+    top: 40%;
+    left: -90px;
+    background: var(--mint);
+    opacity: 0.22;
+    border-radius: 40% 60% 38% 62% / 55% 40% 60% 45%;
+}
+.deco__blob--coral {
+    width: clamp(200px, 28vw, 340px);
+    aspect-ratio: 1;
+    bottom: 80px;
+    right: -100px;
+    background: var(--coral);
+    opacity: 0.16;
+    border-radius: 52% 48% 33% 67% / 46% 57% 43% 54%;
+}
+
+.deco__dots {
+    width: 150px;
+    height: 110px;
+    background-image: radial-gradient(var(--pink) 2.5px, transparent 2.5px);
+    background-size: 18px 18px;
+    opacity: 0.55;
+}
+.deco__dots--top {
+    top: 44px;
+    left: 4%;
+}
+.deco__dots--bottom {
+    bottom: 160px;
+    left: 8%;
+    background-image: radial-gradient(var(--coral) 2.5px, transparent 2.5px);
+}
+
+.deco__ring {
+    width: 100px;
+    height: 100px;
+    top: 12%;
+    right: 12%;
+    border: 13px solid var(--sun);
+    border-radius: 50%;
+    animation: float 7s ease-in-out infinite;
+}
+.deco__ring--small {
+    width: 44px;
+    height: 44px;
+    bottom: 28%;
+    left: 4%;
+    border: 7px solid var(--coral);
+    animation-delay: -3s;
+}
+
+.deco__square {
+    width: 58px;
+    height: 58px;
+    top: 52%;
+    right: 6%;
+    background: var(--mint);
+    border: 4px solid var(--ink);
+    border-radius: 10px;
+    rotate: 18deg;
+    animation: float 8s ease-in-out infinite -2s;
+}
+.deco__triangle {
+    width: 50px;
+    height: 44px;
+    top: 26%;
+    left: 6%;
+    background: var(--sun);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    rotate: -14deg;
+}
+.deco__circle {
+    width: 26px;
+    height: 26px;
+    top: 9%;
+    left: 36%;
+    border-radius: 50%;
+    background: var(--coral);
+}
+.deco__squiggle {
+    width: 115px;
+    height: 18px;
+    top: 28%;
+    right: 4%;
+    color: var(--coral);
+}
+.deco__plus {
+    width: 26px;
+    height: 26px;
+    color: var(--ink);
+}
+.deco__plus--a {
+    top: 18%;
+    left: 24%;
+}
+.deco__plus--b {
+    bottom: 32%;
+    right: 22%;
+    color: var(--pink);
+}
+.deco__star {
+    width: 40px;
+    height: 40px;
+    top: 16%;
+    right: 28%;
+    color: var(--sun);
+    animation: spin 18s linear infinite;
+}
+
+.not-found__wave {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: clamp(70px, 10vw, 120px);
+    color: var(--pink);
+}
+
+/* ================= Tarjeta Principal ================= */
+.error-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem) 2.5rem;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+    box-shadow: 10px 10px 0 var(--pink);
+    text-align: center;
+}
+
+/* Cinta superior */
+.error-card::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    width: 110px;
+    height: 30px;
+    background: var(--mint);
+    border: 3px solid var(--ink);
+    border-radius: 6px;
+    translate: -50% 0;
+    rotate: -4deg;
+}
+
+/* Círculo en la esquina inferior derecha */
+.error-card::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    bottom: -18px;
+    width: 36px;
+    height: 36px;
+    background: var(--coral);
+    border: 3px solid var(--ink);
+    border-radius: 50%;
+}
+
+.error-card__dots {
+    position: absolute;
+    top: 22px;
+    right: 18px;
+    width: 60px;
+    height: 60px;
+    background-image: radial-gradient(var(--mint) 2.5px, transparent 2.5px);
+    background-size: 12px 12px;
+}
+
+.error-card__star {
+    position: absolute;
+    top: 24px;
+    left: 20px;
+    width: 28px;
+    height: 28px;
+    color: var(--coral);
+}
+
+/* Número 404 */
+.error-card__codebox {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1rem;
+}
+
+.error-card__code {
+    margin: 0;
+    font-size: clamp(4.5rem, 14vw, 7.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    text-shadow: 5px 5px 0 var(--sun);
+}
+
+.error-card__underline {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 90%;
+    height: 16px;
+    translate: -50% 0;
+    color: var(--coral);
+}
+
+/* Etiqueta destacada estilo hero__subtitle */
+.error-card__badge {
+    display: inline-block;
+    margin: 1.5rem 0 0;
+    padding: 0.65rem 1.25rem;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: 5px 5px 0 var(--ink);
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    font-weight: 700;
+    rotate: -1deg;
+}
+
+.error-card__text {
+    margin: 1.5rem auto 0;
+    max-width: 44ch;
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    line-height: 1.55;
+    color: #4a2250;
+}
+
+/* ================= Botones ================= */
+.error-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.45rem;
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition:
+        translate 0.12s,
+        box-shadow 0.12s;
+}
+.btn:hover {
+    translate: -2px -2px;
+    box-shadow: 6px 6px 0 var(--ink);
+}
+.btn:active {
+    translate: 2px 2px;
+    box-shadow: 1px 1px 0 var(--ink);
+}
+.btn:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 3px;
+}
+
+.btn--ink {
+    background: var(--ink);
+    color: #fff;
+    box-shadow: 4px 4px 0 var(--pink);
+}
+.btn--ink:hover {
+    box-shadow: 6px 6px 0 var(--pink);
+}
+.btn--sun {
+    background: var(--sun);
+}
+.btn--pink {
+    background: var(--pink);
+}
+
+/* ================= Movimiento ================= */
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes float {
+    50% {
+        translate: 0 -14px;
+    }
+}
+@keyframes spin {
+    to {
+        rotate: 360deg;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .not-found__inner,
+    .deco__ring,
+    .deco__square,
+    .deco__star {
+        animation: none;
+    }
+    .btn {
+        transition: none;
+    }
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 600px) {
+    .error-card__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .deco__dots--bottom,
+    .deco__triangle,
+    .deco__plus--a,
+    .deco__squiggle {
+        display: none;
+    }
+}
