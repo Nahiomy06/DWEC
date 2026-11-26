@@ -1,0 +1,13 @@
+<article class="card p-3 h-100">
+    <div>
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+            <img src="{{ miUser.image }}" [alt]="miUser.first_name" class="object-fit-cover">
+        </div>
+        <h3 class="fs-6 fw-semibold mb-3">{{ miUser.first_name }} {{ miUser.last_name }}</h3>
+    </div>
+    <div class="d-flex gap-1">
+        <button class="btn btn-danger btn-sm flex-fill text-nowrap px-1" [routerLink]="['/usuario-view', miUser.id]">Ver mas</button>
+        <button class="btn btn-danger btn-sm flex-fill text-nowrap px-1" (click)="ActualizarUser(miUser)">Actualizar</button>
+        <button class="btn btn-danger btn-sm flex-fill text-nowrap px-1" (click)="deleteUser(miUser)">Borrar</button>
+    </div>
+</article>

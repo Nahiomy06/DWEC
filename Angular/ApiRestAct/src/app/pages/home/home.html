@@ -1,0 +1,17 @@
+<section class="container">
+    <hr>
+    <div>
+        <button class="btn btn-secondary w-100 fs-4 my-4" type="button" (click)="actualizarLista()">Actualizar vista</button>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            @for (user of arrUsers; track user.id) {
+            <article class="col">
+                <app-user-card [miUser]="user" class="d-block h-100"></app-user-card>
+            </article>
+            } @empty {
+            <div class="col-12">
+                <p>No hay usuarios disponibles</p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

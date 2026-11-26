@@ -1,14 +1,6 @@
 import { Service } from '@angular/core';
 import { IserviciosProfecionales } from '../interfaces/iservicios-profecionales';
 import { SERVICIOSPROFESIONALES } from '../../db/serviciosProfesionales.db';
-import {
-  PathKind,
-  SchemaPath,
-  SchemaPathRules,
-  LogicFn,
-  OneOrMany,
-  ValidationError,
-} from '@angular/forms/signals';
 
 @Service()
 export class ServiceProfesionalesService {
