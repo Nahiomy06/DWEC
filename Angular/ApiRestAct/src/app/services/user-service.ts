@@ -30,7 +30,9 @@ export class UserService {
   }
 
   deleteUser(miUser: IUser) {
-    const index = this.arrUsers.findIndex((user) => miUser.id && user.id === miUser.id);
+    const index = this.arrUsers.findIndex(
+      (user) => (miUser.id && user.id === miUser.id) || (miUser._id && user._id === miUser._id),
+    );
 
     if (index !== -1) {
       this.arrUsers.splice(index, 1);
